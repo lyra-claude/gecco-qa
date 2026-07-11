@@ -1,0 +1,51 @@
+\frametitle{Every GA Is a Pipeline}
+\begin{center}
+  \begin{tikzpicture}[
+    op/.style={rectangle, rounded corners=3pt, draw=geckoBlue, fill=geckoBlue!10,
+               minimum height=28pt, minimum width=55pt, font=\small\ttfamily},
+    arr/.style={-{Stealth[length=5pt]}, thick, geccoAccent},
+    eff/.style={font=\scriptsize\color{gray}, align=center}]
+
+    % Pipeline arrows
+    \node[op] (eval) at (0,0) {eval};
+    \node[op] (sel) at (2.6,0) {select};
+    \node[op] (cross) at (5.2,0) {cross};
+    \node[op] (mut) at (7.8,0) {mutate};
+
+    \draw[arr] (eval) -- (sel);
+    \draw[arr] (sel) -- (cross);
+    \draw[arr] (cross) -- (mut);
+
+    % Type annotations
+    \node[font=\scriptsize\color{geccoHighlight}] at (-1.6,0) {Pop\,a};
+    \node[font=\scriptsize\color{geccoHighlight}] at (9.5,0) {$M$\,(Pop\,a)};
+
+    % Kleisli composition label
+    \draw[decorate, decoration={brace, amplitude=5pt, mirror}, thick, geccoAccent]
+      (-0.6,-0.7) -- (8.4,-0.7)
+      node[midway, below=8pt, font=\small] {Kleisli composition \;$\ggg$};
+
+    % Effects underneath
+    \node[eff] at (3.9,-2.0) {%
+      $M$ = \textrm{randomness} $\times$ \textrm{config} $\times$ \textrm{logging}};
+
+  \end{tikzpicture}
+  \end{center}
+
+  \vspace{6pt}
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+    {\small\color{gray} In imperative code:}\\[2pt]
+    {\small Statements in a loop body.\\
+    Can't inspect, compose, or reuse.}
+
+    \column{0.48\textwidth}
+    {\small\color{geccoHighlight} As Kleisli arrows:}\\[2pt]
+    {\small A first-class value.\\
+    Same type in $=$ same type out.}
+  \end{columns}
+
+  \note{The pipeline is there in every GA --- but in imperative code it's invisible.
+    Kleisli composition makes it a first-class value you can compose further:
+    lift into an island model, nest inside an adaptive strategy, analyze.
+    The monad M threads randomness, configuration, and logging automatically.}

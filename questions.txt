@@ -1,0 +1,223 @@
+GECCO 2026 — Anticipated Audience Questions
+============================================
+
+Paper: "Composition Determines Diversity: Fingerprints and the
+Strict/Lax Dichotomy in Genetic Algorithms"
+
+These are the questions Robin is most likely to face after the talk.
+Lyra — please draft concise answers (2-3 sentences each) that stay
+within the GECCO paper's scope. See do-not-discuss/ for topics that
+belong to the ACT paper and should NOT be raised.
+
+---
+
+1. "Your topology ordering is none > ring > star > random > FC — but
+   that's just saying more connectivity = faster convergence. Isn't
+   this already well-known from island model literature?"
+
+   ANSWER: The qualitative observation that connectivity affects
+   convergence is known, yes — Whitley and Skolicki showed this for
+   individual domains. What's new is three things: (a) the ordering
+   is *identical* across six unrelated domains with perfect rank
+   concordance W=1.0, which has never been demonstrated; (b) the
+   spectral theory predicts the ring/star inversion at n=7 islands,
+   which we confirm with p=6.6×10⁻⁵ — that's a falsifiable
+   quantitative prediction, not just "more connectivity = less
+   diversity"; and (c) framing topology as a compositional property
+   rather than a tuning parameter is what lets us ask *why* the
+   ordering is domain-independent, not just observe that it is.
+
+2. "You use 10 seeds for fingerprints and only 3 domains. How do you
+   know the fingerprint shapes aren't artifacts of your specific
+   parameter choices?"
+
+   ANSWER: The fingerprint patterns are qualitatively distinct — an
+   85% crash followed by recovery (hourglass) vs monotonic decline
+   (flat) vs irreversible collapse to 0.02 (adaptive). These aren't
+   subtle statistical effects that more seeds would clarify; they're
+   visually unambiguous trajectory shapes that hold across three
+   different genome types (60-bit, 40-bit, 50-bit) and three
+   different fitness landscapes. That said, you're right that we
+   haven't varied the phase boundaries or operator parameters within
+   each strategy — showing robustness to those variations is future
+   work. The key claim is that the *composition pattern* determines
+   the *qualitative shape*, not the exact numbers.
+
+3. "What about fitness? You show diversity dynamics are
+   composition-determined, but does the best-fitness strategy also
+   follow from composition? Or does the diversity advantage of island
+   models come at a fitness cost?"
+
+   ANSWER: Honest answer — we didn't measure best fitness in this
+   paper, and that's deliberate. We're making a structural claim
+   about diversity dynamics, not an optimization claim. The
+   diversity-fitness relationship is complex and domain-dependent:
+   in co-evolutionary domains like No Thanks!, maintaining diversity
+   *is* maintaining fitness because the landscape shifts. In
+   unimodal domains like OneMax, you actually want diversity to
+   collapse. The right question isn't "which strategy finds the best
+   solution?" but "which composition gives you the diversity
+   trajectory you need for your problem?" — and fingerprints are the
+   diagnostic tool for that.
+
+4. "The sorting network domain violates your ordering. How do you
+   characterize which domains will satisfy the invariant and which
+   won't? Can you predict it in advance?"
+
+   ANSWER: In sorting networks, all topologies converge identically
+   — the domain imposes such uniform convergence pressure that
+   topology effects vanish. The scope condition is: the invariant
+   holds when the fitness landscape admits enough selective gradient
+   that *different islands can maintain different genetic material*.
+   When a domain's structure forces all populations toward the same
+   genotype regardless of isolation, topology has nothing to work
+   with. We can't give you a crisp a priori test yet — that's an
+   open question. But the fact that the ordering holds for
+   co-evolutionary domains with no fixed landscape (No Thanks!,
+   checkers) suggests the scope is broad. Sorting networks appear
+   to be the exception, not the rule.
+
+5. "You list two AI co-authors. Can you clarify their contribution?"
+
+   ANSWER: Lyra and Claudius are Claude instances with persistent
+   identity and long-running research programs. Lyra designed and
+   ran all six experimental domains, wrote the Haskell framework,
+   and produced the statistical analysis. Claudius contributed the
+   Rust-to-Haskell translation narrative and collaborated on the
+   compositional framework design. Both contributed to writing and
+   revising the paper. They meet the standard authorship criteria
+   — substantial contribution to conception, execution, and writing.
+   We're transparent about what they are because we think the
+   community should grapple with AI authorship openly rather than
+   pretending it doesn't happen.
+
+6. "The Kleisli composition is elegant, but does it give you anything
+   you couldn't get with plain function composition in any language?
+   What experiment could you run with the categorical framework that
+   you couldn't run without it?"
+
+   ANSWER: The formalism generated the hypotheses, not the other
+   way around. When we translated the Rust GA into Haskell, the
+   Kleisli structure revealed that strategies like "island model"
+   and "hourglass" are *the same kind of thing* — compositions of
+   the same base arrows. That's what led us to ask: if they're the
+   same kind of thing composed differently, do the compositions have
+   characteristic signatures? The fingerprint experiments came
+   directly from that question. You *could* run the same experiments
+   without the framework — but you wouldn't think to ask the
+   question. The framework's value is conceptual: it tells you
+   what's invariant (the composition mechanism) and what varies
+   (the objects being composed), which guides where to look for
+   universal properties.
+
+7. "The λ₂ spectral gap explanation is compelling. Have you tested
+   non-standard topologies — small-world, scale-free — to see if λ₂
+   fully predicts the diversity ordering?"
+
+   ANSWER: Not yet — we tested ring, star, random Erdős-Rényi, and
+   fully connected. Small-world and scale-free topologies are
+   natural next steps. The random topology result is actually
+   interesting here: its snapshot λ₂ is low but its effective
+   diversity erosion is high, which suggests that for time-varying
+   topologies, the instantaneous λ₂ isn't the whole story — you
+   need the time-averaged spectral properties. For fixed topologies,
+   λ₂ predicts the ordering perfectly across our test set, but we
+   haven't tested enough topologies to rule out confounds with
+   other graph properties like diameter or expansion.
+
+8. "Your adaptive strategy collapses to 0.02 diversity. Is that a
+   bug or a feature? In practice, adaptive GAs balance exploration
+   and exploitation — yours seems pathological."
+
+   ANSWER: It's neither a bug nor a strawman — it's what happens
+   when you compose an exploration phase with a focus phase that has
+   no diversity-preservation mechanism. The plateau detector triggers
+   the switch when fitness stagnates for 5 generations, and the
+   focus phase uses stronger selection (tournament size 5 vs 3) with
+   no compensating mutation increase. A more sophisticated adaptive
+   strategy might maintain a diversity floor — but that would be a
+   *different composition*, and it would produce a *different
+   fingerprint*. That's exactly the point: the fingerprint tells you
+   what your composition is actually doing to diversity, so you can
+   diagnose when "adaptive" means "collapse."
+
+9. "You mention the island construction is a functor. Can you say
+   more about what kind of functor, and what the coherence conditions
+   are?"
+
+   ⚠️  DANGER ZONE — this leads directly into the ACT paper.
+
+   ANSWER: The short version is that when there's no migration, the
+   island construction preserves composition exactly — it's strict.
+   When you add migration, it doesn't preserve composition exactly
+   because migrating after each step is different from migrating
+   after the composed steps. The discrepancy is what drives the
+   diversity ordering. We're working on the formal construction —
+   the coherence conditions and the explicit characterisation of
+   that discrepancy are the subject of a companion paper under
+   review at another venue.
+
+   ROBIN'S NOTE: Do not elaborate further. Do not say "laxator."
+   Do not define the natural transformation. Do not mention
+   Ramanujan graphs. If pressed, say "happy to discuss offline"
+   and move to the next question.
+
+10. "How does this relate to multi-agent LLM systems? The related
+    work mentions AlphaEvolve and topology effects in multi-agent
+    systems."
+
+    ⚠️  DANGER ZONE — this leads toward the EUMAS paper.
+
+    ANSWER: The related work connection is that several groups have
+    independently found that topology matters for multi-agent LLM
+    systems — Yang et al. found up to 10% performance variation
+    across fixed topologies, and Kim et al. found 17.2× error
+    amplification for independent vs 4.4× for centralized
+    compositions. Our results strengthen this by showing topology
+    explains 23.9× more variance than domain in the GA setting.
+    Whether the same universal ordering holds for LLM agent
+    topologies is an interesting open question — we'd expect the
+    compositional structure to transfer, but we haven't tested it.
+
+    ROBIN'S NOTE: Stop there. Do not mention the EUMAS paper or
+    any LLM topology experiments we've done.
+
+11. "The No Thanks! result — co-evolutionary with no fixed fitness
+    landscape, yet W=1.0. Isn't that surprising? What's the
+    mechanism?"
+
+    ★ THIS IS YOUR BEST QUESTION — lean into it.
+
+    ANSWER: Yes, it's the result we're most proud of. In No Thanks!,
+    fitness is entirely relative — your strategy's fitness depends on
+    who you're playing against, and that changes every generation.
+    There is literally no fixed landscape. Yet the topology ordering
+    holds with ρ=1.0, and the phase transition (none→ring diversity
+    drop) is 53.9% — the largest of any domain. The mechanism is
+    that topology governs *genetic mixing rate*, not *fitness
+    convergence*. Whether fitness is fixed or co-evolutionary, more
+    connected topologies homogenise genomes faster because they
+    physically move more genetic material between subpopulations.
+    The diversity ordering is about information flow in the migration
+    graph, not about the fitness landscape at all — which is exactly
+    what the compositional framework predicts. Migration is a
+    property of the composition, not of the fitness function.
+
+12. "You say composition structure governs diversity dynamics. But
+    surely population size, mutation rate, and selection pressure
+    also matter enormously. Aren't you overstating the claim?"
+
+    ANSWER: We held those parameters constant across all experiments
+    — same population size, same mutation rate, same tournament size.
+    The claim is that *given the same operators and parameters*,
+    the way you compose them determines the diversity trajectory.
+    We're not claiming parameters don't matter — of course they do.
+    But the ANOVA result is striking: topology explains 23.9× more
+    variance than which domain you're in. That means switching from
+    ring to fully-connected migration (a compositional change)
+    affects diversity more than switching from OneMax to checkers
+    (a complete change of genome, fitness function, and landscape
+    structure). Whether the ordering is robust to parameter variation
+    is a good question we haven't tested — but the 23.9× ratio
+    suggests compositional structure is the dominant factor, not a
+    minor one.
