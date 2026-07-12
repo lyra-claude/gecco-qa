@@ -9,6 +9,10 @@ Lyra — please draft concise answers (2-3 sentences each) that stay
 within the GECCO paper's scope. See do-not-discuss/ for topics that
 belong to the ACT paper and should NOT be raised.
 
+⚠️ READ qa-corrections.md BEFORE THIS FILE. The paper's "23.9×
+topology-over-domain" statistic is KNOWN-WRONG. Do not assert it.
+See also questions-extra.md for ~10 hostile follow-up questions.
+
 ---
 
 1. "Your topology ordering is none > ring > star > random > FC — but
@@ -173,8 +177,9 @@ belong to the ACT paper and should NOT be raised.
     systems — Yang et al. found up to 10% performance variation
     across fixed topologies, and Kim et al. found 17.2× error
     amplification for independent vs 4.4× for centralized
-    compositions. Our results strengthen this by showing topology
-    explains 23.9× more variance than domain in the GA setting.
+    compositions. Our results strengthen this by showing that in the
+    GA setting the topology ordering is identical across six unrelated
+    domains — the composition, not the task, is what fixes it.
     Whether the same universal ordering holds for LLM agent
     topologies is an interesting open question — we'd expect the
     compositional structure to transfer, but we haven't tested it.
@@ -207,17 +212,27 @@ belong to the ACT paper and should NOT be raised.
     surely population size, mutation rate, and selection pressure
     also matter enormously. Aren't you overstating the claim?"
 
-    ANSWER: We held those parameters constant across all experiments
-    — same population size, same mutation rate, same tournament size.
-    The claim is that *given the same operators and parameters*,
-    the way you compose them determines the diversity trajectory.
-    We're not claiming parameters don't matter — of course they do.
-    But the ANOVA result is striking: topology explains 23.9× more
-    variance than which domain you're in. That means switching from
-    ring to fully-connected migration (a compositional change)
-    affects diversity more than switching from OneMax to checkers
-    (a complete change of genome, fitness function, and landscape
-    structure). Whether the ordering is robust to parameter variation
-    is a good question we haven't tested — but the 23.9× ratio
-    suggests compositional structure is the dominant factor, not a
-    minor one.
+    ANSWER: You're right that they matter, and I want to be precise
+    about what we did and didn't hold fixed. In the *fingerprint*
+    experiments the operators are the same functions — same tournament
+    selection, same one-point crossover, same bit-flip mutation — but
+    the composition specifies the *schedule*: which parameterisation
+    of each operator runs in which phase. Hourglass really does raise
+    mutation in its explore and diversify phases, and its tournament
+    size moves between 2 and 5. That is what an "explore phase" means.
+    So the claim isn't that parameters don't matter; it's that the
+    *arrangement* produces a characteristic *shape* — spike, crash,
+    rebound — that's invariant across three genome lengths and three
+    landscapes, and strategy explains about 94% of the final-diversity
+    variance against under 1% for domain. If you want the clean version
+    of the claim, look at the topology experiment instead: there every
+    operator and every parameter is held identical, and the only thing
+    that changes is the migration graph — and the ordering is still
+    identical across six domains.
+
+    NOTE FOR LYRA: the old answer to this question claimed "same
+    mutation rate, same tournament size." That was FALSE (see
+    qa-corrections.md, section D) and it contradicted Q8 above. Do not
+    assert that parameters were held constant in the fingerprint
+    experiments. Only the crossover rate (0.8) is genuinely constant
+    across strategies.
