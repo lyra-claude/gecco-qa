@@ -220,15 +220,18 @@ See also questions-extra.md for ~10 hostile follow-up questions.
     of each operator runs in which phase. Hourglass really does raise
     mutation in its explore and diversify phases, and its tournament
     size moves between 2 and 5. That is what an "explore phase" means.
-    So the claim isn't that parameters don't matter; it's that the
-    *arrangement* produces a characteristic *shape* — spike, crash,
-    rebound — that's invariant across three genome lengths and three
-    landscapes, and strategy explains about 94% of the final-diversity
-    variance against under 1% for domain. If you want the clean version
-    of the claim, look at the topology experiment instead: there every
+    So the claim isn't that parameters don't matter — and I'll go
+    further. That experiment cannot separate the arrangement from the
+    mutation rate. The terminal mutation rate alone accounts for almost
+    all of the spread. So we are retiring the variance number we had
+    from it. What survives is the *shapes* — spike, crash, rebound —
+    across three genome lengths and three landscapes, with an
+    eighteen-fold spread in final diversity. For the composition claim
+    itself, look at the topology experiment instead: there every
     operator and every parameter is held identical, and the only thing
     that changes is the migration graph — and the ordering is still
-    identical across six domains.
+    identical across six domains, with topology explaining sixty-eight
+    percent of the within-domain variance in final diversity.
 
     NOTE FOR LYRA: the old answer to this question claimed "same
     mutation rate, same tournament size." That was FALSE (see

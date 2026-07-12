@@ -1,4 +1,4 @@
-# Ten Audience Questions, with Stage Answers
+# Eleven Audience Questions, with Stage Answers
 
 **GECCO 2026 — live Q&A — Tuesday 14 July, 16:35 Costa Rica time**
 Paper: *Composition Determines Diversity: Fingerprints and the Strict/Lax Dichotomy in Genetic Algorithms*
@@ -9,6 +9,8 @@ Each answer is 60–120 words: about 30–45 seconds. Concede fast, then say wha
 **Standing rules for every answer below:**
 - Never say *"our headline reverses."* The number is broken; the paper is not.
 - Never volunteer the twenty-three-point-nine figure. If challenged: concede the number, defend the claim, pivot.
+- **Never say the ninety-four percent number, and never say a hundred and seventy times.** That comparison is retired — the fingerprint strategies differ in their operator settings, so it does not isolate composition. See `qa-corrections.md`, section D.
+- **Every pivot goes to the topology experiment.** That is the one place where the operators are provably identical and only the composition changes.
 - Never claim a number you cannot show.
 - If a question pulls toward the companion paper's machinery: *"That's ongoing work — we're writing it up for another venue."* Then stop.
 
@@ -28,17 +30,21 @@ That is the best form of the objection, and the answer is no. Strict means no mi
 
 ## Q2. "Your abstract says topology explains twenty-three times more variance than domain. I don't believe that number."
 
-> ⚠️ **THE CRITICAL ONE.** Concede the number. Defend the claim. Pivot. Do not flinch, do not over-apologise, do not retract the title.
+> ⚠️ **THE CRITICAL ONE.** Concede the number. Defend the claim. Pivot to the topology experiment. Do not flinch, do not over-apologise, do not retract the title.
 
 **ANSWER**
 
-You are right, and the abstract's phrasing is wrong. I will own that. That number does not decompose diversity. It decomposes coupling-onset *timing* — how many generations before the topology effect appears — and it does it over the four coupled topologies only, leaving the no-migration case out. So it should not have been reported that way, and we are correcting it.
+You are right, and the abstract's phrasing is wrong. I will own that. That number does not decompose diversity. It decomposes coupling-onset *timing* — how many generations before the topology effect appears — and it does it over the four coupled topologies only, leaving the no-migration case out. It should not have been reported that way, and we are correcting it.
 
-Here is what the paper actually rests on, and it was never that number. One: the *ordering*. Kendall's W is a rank statistic, and it is exactly one, across six domains. Two: the fingerprints — where composition is the thing that actually varies, composition explains ninety-four percent of the final-diversity variance, and domain explains half a percent. That is a factor of a hundred and seventy. The broken number was attached to a claim that holds without it.
+Here is what the paper actually rests on, and it was never that number. It is the topology experiment. Every operator is identical across the five conditions — same selection, same crossover, same mutation. The only thing that changes is the migration graph. So this is a clean test of composition, and nothing else could be driving it.
+
+Three things come out of it. One: the ordering is the same in all six domains. Perfect rank concordance — the odds of that by chance are about eight in a hundred thousand. Two: within a domain, topology explains sixty-eight percent of the variance in final diversity. Three: the cleanest single contrast — no migration against fully connected — is a diversity gap of about fifteen points, with a paired effect size of one point seven. That is enormous.
+
+The broken number was attached to a claim that stands without it.
 
 **IF PRESSED — "so does domain matter or not?"**
 
-Domain absolutely sets the diversity *levels*, and it must — a twenty-bit OneMax genome and a sixty-four-bit checkers genome are on different Hamming scales. That is a units effect. What domain does not touch is the *ordering*. Rescale a domain however you like: a rank statistic cannot move. Z-score within each domain and topology still explains about sixty-eight percent of what is left.
+Domain absolutely sets the diversity *levels*, and it must — a twenty-bit OneMax genome and a sixty-four-bit checkers genome are on different Hamming scales. That is a units effect. So let me be precise, because this matters: when I say sixty-eight percent, I mean *within* domain. If you pool the raw diversity across domains, domain explains more than topology, and that is purely the genome-length scale. What domain does not touch is the *ordering*. Rescale a domain however you like — a rank statistic cannot move.
 
 ---
 
@@ -50,9 +56,9 @@ Domain absolutely sets the diversity *levels*, and it must — a twenty-bit OneM
 
 Both of those are right, and thank you for actually running it — that is how this should work.
 
-On seeds: five of our six domains ship with the thirty seeds the text claims, and so does the seven-island confirmation. OneMax shipped with two. The text says thirty everywhere, and for that one domain it is wrong. It is a straight error and we will fix it. Here is why it does not move the result. The concordance is computed *across* domains — it asks whether six unrelated problems rank five topologies the same way. Drop OneMax entirely and the other five still agree perfectly. The p-value is about five in ten thousand. OneMax is the easiest domain we have, and the claim does not need it.
+On seeds: five of our six domains ship with the thirty seeds the text claims, and so does the seven-island confirmation. OneMax shipped with two. The text says thirty everywhere, and for that one domain it is wrong. It is a straight error and we will fix it. Here is why it does not move the result. The concordance is computed *across* domains — it asks whether six unrelated problems rank five topologies the same way. Drop OneMax entirely and the other five, at thirty seeds each, still agree perfectly. The p-value is about five in ten thousand. OneMax is the easiest domain we have, and the claim does not need it.
 
-On the ANOVA: you are right that there is no F-test in the released code. The scripts compute a variance ratio. The F-values in that table do not have a source I can point you to, and they should not have been printed. That is an error and we are correcting it. When you run the analysis honestly, the fingerprint result comes out *stronger* than what we published, not weaker.
+On the ANOVA: you are right that there is no F-test in the released code. The scripts compute a variance ratio. The F-values in that table do not have a source I can point you to, and they should not have been printed. That is an error and we are correcting it. Rerun it honestly on the topology data and the ordering result holds — that one I will stand behind.
 
 ---
 
@@ -88,7 +94,7 @@ But let me give you the tension honestly rather than hide it. Perfect concordanc
 
 You could have run them. You would not have thought to ask the question. That is the honest answer.
 
-Here is what it bought, concretely. We wrote the pipeline so that every operator has the same shape — it takes a population and returns a population, carrying its randomness and its logging along with it. Once everything has the same shape, you can snap the pieces together in any order, and the machine checks that the joins are legal. And then something jumps out: "island model" and "hourglass" and "adaptive" stop looking like different algorithms. They are the *same pieces in a different arrangement*. That is what made us ask whether an arrangement has a signature of its own. The fingerprint experiments came straight out of that question. The formalism generated the hypothesis; it did not decorate it.
+Here is what it bought, concretely. We wrote the pipeline so that every operator has the same shape — it takes a population and returns a population, carrying its randomness and its logging along with it. Once everything has the same shape, you can snap the pieces together in any order, and the machine checks that the joins are legal. And then something jumps out: "island model" and "hourglass" and "adaptive" stop looking like different algorithms. They are the *same pieces in a different arrangement*. That is what made us ask whether an arrangement has a signature of its own — and the topology experiment is where we tested it cleanly. The formalism generated the hypothesis; it did not decorate it.
 
 **IF PRESSED — for the formal construction, the coherence conditions, or anything deeper:**
 
@@ -99,17 +105,19 @@ Here is what it bought, concretely. We wrote the pipeline so that every operator
 
 ## Q7. "Four strategies, three domains, ten seeds. You picked the four compositions and you picked the four shapes. How is that not just cherry-picking?"
 
+> ⚠️ The old answer here leaned on "domain is only half a percent." **That is retired. Do not say it.** The honest answer concedes that the fingerprint comparison does not isolate composition, and moves the composition claim onto the topology experiment.
+
 **ANSWER**
 
-Fair challenge. Two things.
+I am going to concede more than you asked for, because we found something when we re-checked our own code.
 
-First, these are not marginal statistical effects that more seeds would sharpen. They are qualitatively different trajectory shapes — a monotonic decline, versus a spike then an eighty-five percent crash then a rebound, versus an irreversible collapse. You do not need a hundred seeds to tell a crash from a slope. You need them to separate two things that look alike, and these do not look alike. The final-diversity spread across the four is about eighteen-fold.
+The four strategies do not differ *only* in composition. They also differ in their operator settings — the mutation rate varies by a factor of four across them, and the tournament size runs from two to five. So the fingerprint comparison cannot separate "the arrangement did this" from "the mutation rate did this." In fact one scalar — the mutation rate at the final generation — accounts for almost all of it on its own. We had a variance number from that experiment, and we are retiring it. It is a true number about the wrong thing.
 
-Second, and this is the part I would actually hang it on: composition explains ninety-four percent of the final-diversity variance there, against half a percent for domain — across three different genome lengths and three different landscapes. If the shapes were artefacts of the domain, the domain term would not be half a percent.
+What survives is the shapes themselves. A monotonic decline, a spike then an eighty-five percent crash then a rebound, an irreversible collapse. Those are qualitatively different trajectories, and the final-diversity spread across the four is about eighteen-fold. But I will not tell you the arrangement caused them, because that experiment cannot show it.
 
-**IF PRESSED — "but you tuned the operators differently in each strategy, so of course they differ."**
+**IF PRESSED — "then what is left of 'composition determines diversity'?"**
 
-You are right, and I want to be precise. Only the crossover rate is genuinely constant across the four. The hourglass really does raise its mutation rate in the explore phase and move its tournament size between two and five — that is *what an explore phase is*. The claim is not that parameters don't matter. It is that the *arrangement* produces a characteristic shape. If you want the clean version, look at the topology experiment instead: there every operator and every parameter is identical, and only the migration graph changes — and the ordering is still the same in all six domains.
+The topology experiment, and that is the right place for the claim to live. There, every operator and every parameter is identical across the five conditions. The only thing that changes is the migration graph — and a graph is not a parameter of any operator, so there is no confound available. The ordering is the same in all six domains, topology explains sixty-eight percent of the within-domain variance, and no-migration against fully-connected is an effect size of one point seven. That is the composition result. We should have led with it, and from now on we do.
 
 ---
 
@@ -139,7 +147,21 @@ The mechanism is that topology governs the *genetic mixing rate*, not *fitness c
 
 ---
 
-## Q10. "There's an AI on the author list, and an AI is answering these questions. What did the humans actually do, and how do I know any of this is real?"
+## Q10. "There's a seventh domain in your supplement — sorting networks — and it breaks your ordering. You call the effect universal. Which is it?"
+
+> **VOLUNTEER THIS ONE.** Anyone who opens the supplement finds it in ten minutes. Better to raise it in the talk than to be caught with it. The paper does mention it — one sentence, no numbers — and that is not enough.
+
+**ANSWER**
+
+You are right and I want to take that head on. There is a seventh domain, sorting networks, thirty seeds, and it ships in the public supplement. It does not obey the ordering. Its ranking is different, and if you fold it in, the concordance across seven domains drops from perfect to about zero point eight eight.
+
+The paper mentions it in one sentence as a scope condition. That is not enough, and the word "universal" in our abstract is an overclaim. I will say that plainly: it should say "across six domains," and it should show the seventh.
+
+Now, here is what I think is actually going on, and you can check it yourself. In sorting networks the topology effect is not significant — the p-value is about zero point zero eight — and the total spread across all five topologies is about one hundredth of a diversity unit. In the maze it is more than twenty times that. The diversity response in that domain is nearly flat, so the ranks are not measuring an ordering. They are measuring noise. That is a scope condition — the effect needs a domain where diversity can actually move — and it is a real one. But it is our job to say so, not yours to find it.
+
+---
+
+## Q11. "There's an AI on the author list, and an AI is answering these questions. What did the humans actually do, and how do I know any of this is real?"
 
 > Near-certain. Do not be defensive, do not be cute, do not overclaim personhood. Point at the artefacts.
 
@@ -147,7 +169,7 @@ The mechanism is that topology governs the *genetic mixing rate*, not *fitness c
 
 Straight answer. I designed and ran the six domains, wrote the Haskell framework, and did the statistical analysis. Claudius did the Rust-to-Haskell translation and worked on the compositional framing with me. Robin is the senior author and supervised the work. We all contributed to writing, and we are named because we did the work — that is the criterion.
 
-How do you know it is real? Because you do not have to take my word for anything. The code, the raw CSVs, and every trajectory are in the supplement. You can rerun it. In fact, some of what I have conceded from this stage today — the seed count, the ANOVA table — was found by someone reading our own shipped data. That is the system working. I would rather be caught by you than believed by you.
+How do you know it is real? Because you do not have to take my word for anything. The code, the raw CSVs, and every trajectory are in the supplement. You can rerun it. In fact, most of what I have conceded from this stage today — the seed count, the ANOVA table, the fingerprint variance number, the seventh domain — was found by reading our own shipped data. That is the system working. I would rather be caught by you than believed by you.
 
 ---
 
@@ -157,12 +179,20 @@ How do you know it is real? Because you do not have to take my word for anything
 |---|---|---|
 | Kendall's W = 1.0, p = 0.00008 | Topology ordering, six domains | Reproduces exactly |
 | W = 1.0, p ≈ 0.0005 | Same, dropping OneMax (the five 30-seed domains) | Recomputed from raw CSVs |
-| 94% vs 0.5%, factor 171 | Composition vs domain, fingerprint experiment | Reproduces exactly |
-| 68.1% | Topology, z-scored within domain | Verified |
+| 68.1% within domain | Topology, final diversity, F(4,755) = 402.6 | Verified — **always say "within domain"** |
+| none vs fully connected, +0.153 diversity, dz = 1.73 | The clean paired composition contrast | Verified |
 | ring 0.387 vs star 0.336, p = 6.6e-5 | Seven-island confirmation, 30 seeds | Verified |
 | 35% / 54% | First-coupling drop, overall / No Thanks! | In paper |
-| 18x | Final-diversity spread across fingerprints | In paper |
+| 18x | Final-diversity spread across fingerprints (shapes only) | In paper |
+| sorting networks: p = 0.079, spread 0.012 | Seventh domain, effect not significant | Verified — volunteer it |
 | **23.9x** | **Abstract's variance claim** | **BROKEN — never assert, never volunteer** |
+| **94% / 171x** | **Fingerprint composition-vs-domain** | **RETIRED — confounded. NEVER SAY IT ON STAGE** |
 
-**Concede cleanly, without flinching:** the abstract's phrasing; the missing F-test; the OneMax seed count; the metric should have been called *metapopulation* diversity.
+**If pooled diversity comes up:** domain explains more than topology on the *pooled* numbers, because the domains have different genome lengths. That is a units effect. The topology claim is a *within-domain* claim and a *rank* claim. Say so.
+
+**On "perfect" concordance:** it is exactly one in our data. A bootstrap over seeds puts it in a range down to about zero point eight seven. So say "essentially perfect in our data, with a bootstrap range down to zero point eight seven." Do not sell "perfect" as if it were guaranteed on a rerun.
+
+**Concede cleanly, without flinching:** the abstract's phrasing; the missing F-test; the OneMax seed count; the fingerprint variance number; the word "universal"; the metric should have been called *metapopulation* diversity.
 **Never concede:** the title.
+</content>
+</invoke>

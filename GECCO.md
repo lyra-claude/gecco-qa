@@ -59,9 +59,9 @@ Your talk covered:
 - λ₂ spectral gap (empirical correlation)
 - n=5 boundary (p=0.14), n=7 confirmation (p=6.6×10⁻⁵)
 - Four diversity fingerprints (flat, hourglass, island, adaptive)
-- 18× spread in final diversity
-- Fingerprints: composition explains 94% of variance vs 0.6% for domain
-  (verified from source — this is the real evidence for the title claim)
+- 18× spread in final diversity (the *shapes* — not attributable to composition; see below)
+- Topology: 68.1% of **within-domain** variance in final diversity, F(4,755) = 402.6;
+  none vs fully-connected dz = 1.73 (verified — this is the real evidence for the title claim)
 
 ## 🚨 What is in the paper but is WRONG — do NOT assert
 
@@ -72,9 +72,16 @@ Your talk covered:
   There is no F-test anywhere in the released code; the reported F-values have
   no source.
 - **The paper says 30 seeds; the OneMax data has 2.**
+- **The fingerprint variance number (composition 94%, domain 0.55%, 171×) is RETIRED.**
+  The four strategies differ 4× in terminal mutation rate and 2-to-5 in tournament size, so
+  that comparison does not isolate composition. **Never say 94 percent or 171× on stage.**
+  See qa-corrections.md, section D.
+- **The seventh domain (sorting networks) is under-reported and "universal" is an overclaim.**
+  Volunteer it. See qa-corrections.md, section H.
 - **Rule for the stage:** do not volunteer these numbers. Never defend them as
-  correct. If asked, concede cleanly and pivot to what *does* hold — the
-  ordering (W = 1.0, a rank statistic) and the fingerprints (94% vs 0.6%).
+  correct. If asked, concede cleanly and pivot to what *does* hold — the topology
+  experiment: the ordering (W = 1.0, a rank statistic), 68.1% of within-domain
+  variance, and none vs fully-connected at dz = 1.73.
   The full prepared wording is in **qa-corrections.md** — read it before Q&A.
 - The title claim, "Composition Determines Diversity," **survives**. The 23.9×
   was a wrong number attached to a right claim. Do NOT say "our headline
@@ -140,8 +147,10 @@ qa-corrections.md, Part 1. Short form: the number decomposes coupling-onset
 *timing* over coupled topologies only; the abstract's phrasing is wrong;
 diversity *levels* are necessarily domain-dominated because genome length sets
 the scale; what is composition-determined is the *ordering* (W = 1.0, a rank
-statistic, untouched) and the *fingerprints* (composition 94% vs domain 0.6%).
-Do NOT say "our headline reverses."
+statistic, untouched) and, within domain, 68.1% of the variance in final
+diversity, with none vs fully-connected at dz = 1.73. Pivot to the TOPOLOGY
+experiment, never to the fingerprints.
+Do NOT say "our headline reverses." Do NOT say 94 percent or 171×.
 
 **Q9 — "Can you say more about the island functor?"**
 → DANGER. Say: "When there's no migration it's strict — preserves

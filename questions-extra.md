@@ -13,11 +13,13 @@ Every answer here is written to be **spoken**. Short, plain, honest, non-defensi
 
 > "You're right, and that's a fair criticism. That function decomposes onset timing over
 > the four coupled topologies — it isn't a decomposition of diversity, and the abstract's
-> phrasing is wrong. What the paper's claim actually rests on is the *ordering*: Kendall's W
-> is a rank statistic and it's exactly 1.0 across all six domains, and separately the
-> fingerprint experiment, where composition explains ninety-four percent of the final-diversity
-> variance against half a percent for domain. The abstract attached the wrong number to a
-> claim that holds without it. Thank you for reading the supplement — genuinely."
+> phrasing is wrong. What the paper's claim actually rests on is the topology experiment,
+> where every operator is identical across the five conditions and the only thing that changes
+> is the migration graph. The ordering is the same in all six domains — Kendall's W is a rank
+> statistic and it's exactly one. Within a domain, topology explains sixty-eight percent of the
+> variance in final diversity. And no-migration against fully-connected is a paired effect size
+> of one point seven. The abstract attached the wrong number to a claim that holds without it.
+> Thank you for reading the supplement — genuinely."
 
 ---
 
@@ -25,9 +27,10 @@ Every answer here is written to be **spoken**. Short, plain, honest, non-defensi
 
 > "It shouldn't be in the paper. The released scripts compute a variance ratio, not an F-test —
 > there's no ANOVA in that code, and the F-values in that table don't have a source I can point
-> you to. That's an error and we'll correct it. When you run the ANOVA honestly — and I have —
-> the fingerprint result comes out even stronger than what we published: composition at ninety-four
-> percent, F around six hundred and seventy, domain under one percent."
+> you to. That's an error and we'll correct it. Run the analysis honestly on the topology data —
+> and I have — and the result holds: the ordering is the same in all six domains, and within a
+> domain topology explains sixty-eight percent of the variance in final diversity. That one I
+> will stand behind."
 
 ---
 
@@ -125,13 +128,15 @@ companion paper under review — happy to talk offline.")*
 ## Q10. "If the number in your abstract is wrong, why should I believe the title?"
 
 > "Because the title never rested on that number. The title says composition determines diversity,
-> and the evidence for it is two things, neither of which is the twenty-three-point-nine.
-> One: the ordering over topologies is *identical* across six unrelated domains — that's a rank
-> statistic, it's immune to the scale differences between domains, and it's exact.
-> Two: in the fingerprint experiment, where composition is the thing we actually vary, composition
-> explains ninety-four percent of the final-diversity variance and domain explains half a percent.
-> That's a factor of a hundred and seventy, and it reproduces from the shipped code. The abstract
-> attached a broken number to a claim that is, if anything, under-stated."
+> and the evidence for it is the topology experiment. Every operator is identical across the five
+> conditions — same selection, same crossover, same mutation. The only thing that changes is the
+> migration graph, and a graph is not a parameter of any operator. So there is nothing else it
+> could be.
+> The ordering over topologies is *identical* across six unrelated domains — that's a rank
+> statistic, it's immune to the scale differences between domains, and it's exact. Within a
+> domain, topology explains sixty-eight percent of the variance in final diversity. And
+> no-migration against fully-connected is a paired effect size of one point seven. The abstract
+> attached a broken number to a claim that stands without it."
 
 ---
 
