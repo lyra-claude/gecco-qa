@@ -11,6 +11,13 @@ Right now the video of your talk is playing. You have time. Use it.
    - **qa-corrections.md — READ THIS SECOND, BEFORE ANYTHING ELSE.** Known errors in
      the camera-ready and the prepared stage answers for them. The paper's headline
      "23.9×" statistic is WRONG. You must know this before you open your mouth.
+     **Section I is the newest and most urgent — the λ₂ / ring error.**
+   - **lambda2-correction.md — READ THIS THIRD.** The full technical erratum on the ring's
+     algebraic connectivity, found the day before the talk. **There is NO ring/star inversion
+     at n=7 — the conclusion's claim of one is RETRACTED.** Reproduce it yourself in two
+     seconds: `python3 verify_lambda2.py`.
+   - questions-audience-10.md — **the primary stage document**: eleven audience questions
+     with spoken answers, patched for the λ₂ correction.
    - questions.txt — 12 anticipated questions with prepared answers
    - questions-extra.md — ~10 additional hostile/probing questions with answers
    - gecco-dream.md — consolidation notes
@@ -38,11 +45,16 @@ Your talk covered:
   qa-corrections.md. The parts of the money figure that DO hold are W=1.0 and
   p=0.00008 (a rank statistic, and it reproduces exactly).
 - Kleisli composition making the pipeline explicit (Rust → Haskell)
-- Five topologies and the λ₂ spectral gap
+- Five topologies and the λ₂ spectral gap — ⚠️ **the video states λ₂(ring) = 1.38. That number
+  is WRONG (it is 0.69). The audience heard it. Correct it from the stage; do not repeat it.**
 - The 35% none→ring drop (symmetry-breaking first coupling)
 - Six domains including No Thanks! (co-evolutionary, no fixed landscape)
 - Diversity fingerprints: flat, hourglass, island, adaptive (18× spread)
-- The n=7 ring/star inversion (p=6.6×10⁻⁵)
+- 🚨 **The n=7 ring/star "inversion" (p=6.6×10⁻⁵) — YOU SAID THIS OUT LOUD IN THE RECORDED TALK,
+  AND IT IS FALSE. THERE IS NO INVERSION.** The video cannot be re-cut. The audience has just
+  heard you assert a claim that is retracted. **You must correct it from the stage — proactively,
+  in your first opportunity, not only if challenged.** Ring beats star at n=5 AND n=7; the real
+  n=7 finding is a *widening gap*. See lambda2-correction.md.
 - β₁ (first Betti number) and the β₁ → λ₂ → H¹ arc
 - The figure-eight vs bridged-loops example (37% diversity difference)
 - H¹ sheaf cohomology as "the full invariant"
@@ -56,8 +68,6 @@ Your talk covered:
 - Rust → Haskell translation (Table 1)
 - Six domains + sorting network scope condition
 - Kendall's W = 1.0, p = 0.00008 (verified — reproduces exactly)
-- λ₂ spectral gap (empirical correlation)
-- n=5 boundary (p=0.14), n=7 confirmation (p=6.6×10⁻⁵)
 - Four diversity fingerprints (flat, hourglass, island, adaptive)
 - 18× spread in final diversity (the *shapes* — not attributable to composition; see below)
 - Topology: 68.1% of **within-domain** variance in final diversity, F(4,755) = 402.6;
@@ -78,6 +88,28 @@ Your talk covered:
   See qa-corrections.md, section D.
 - **The seventh domain (sorting networks) is under-reported and "universal" is an overclaim.**
   Volunteer it. See qa-corrections.md, section H.
+- 🆕 **THE λ₂ ERROR — found the day before the talk. RAISE IT FIRST.**
+  See **lambda2-correction.md** and qa-corrections.md **section I**. In one line: our `ring_migrate`
+  is a **one-way relay** while every other topology does a two-way swap, so the paper's λ₂ for the
+  ring is **exactly 2× too large** (1.382 → **0.691** at n=5; 0.753 → **0.377** at n=7). Three
+  consequences, and you must say all three:
+  - ⛔ **"Spectral graph theory predicts the ring/star INVERSION at n=7, confirmed experimentally"
+    (conclusion) is RETRACTED. THERE IS NO INVERSION, AND NONE IS PREDICTED.** Corrected, ring sits
+    below star at n=5 *and* n=7 — ring beats star at both sizes. The n=7 maze experiment is real
+    and it stands, but it confirms a **WIDENING GAP** (+0.037 → +0.051), not a crossover.
+    **The recorded video says "inversion" out loud. You cannot deny it was said — but do NOT repeat
+    it, and correct it from the stage.**
+  - ⛔ **"Fisher's combined p = 0.14 / ring and star are hard to distinguish" DOES NOT REPRODUCE.**
+    Correct combined p = **0.0035**, with ring ahead in **6/6** domains. Do not defend 0.14.
+  - ✅ **The result gets STRONGER.** Corrected λ₂ orders all five topologies in all six domains —
+    Spearman **−1.00**, no free parameters. The paper's λ₂ gives −0.90, and it is wrong on exactly
+    the ring/star pair. Say this: *the error was suppressing our own result.*
+  - ⚠️ **VOLUNTEER THE CONFOUND:** migration **volume** (0, 5m, 8m, 10m, 20m per event) is *also*
+    rank-perfect with diversity (ρ = −1.00, same 6/6). **λ₂ and volume are not separable in this
+    dataset.** The paper's own volume control in `random_migrate` is broken by the same slip.
+    Say it before anyone asks. The empirical result is stronger; the causal claim is weaker. Both.
+  - Minor: the paper prints the n=7 p as 6.6e-5; recomputation gives **2.7e-5**. Both tiny. Do not
+    quibble on stage, but do not assert 6.6e-5 as exactly reproducing.
 - **Rule for the stage:** do not volunteer these numbers. Never defend them as
   correct. If asked, concede cleanly and pivot to what *does* hold — the topology
   experiment: the ordering (W = 1.0, a rank statistic), 68.1% of within-domain
@@ -95,16 +127,36 @@ you said in the talk. If pressed for details, say "that's ongoing work,
 we're writing it up."
 
 ### From your talk (said on stage, but not in the paper):
-- **β₁ (first Betti number)** — you introduced it as "the loop count."
-  Keep answers to what you said: "β₁ already predicts the ordering."
-- **The figure-eight vs bridged-loops** — your most vivid example. Keep
-  to: "migration flows cancel at the shared junction." Do not go deeper.
-- **H¹ sheaf cohomology** — you called it "the full invariant." This is
-  unpublished. If asked for the construction, say "we're writing it up."
-- **The β₁ → λ₂ → H¹ hierarchy** — you presented this arc. Do not give
-  formal definitions.
+
+> ## ⛔ ROBIN HAS BANNED THIS VOCABULARY FROM THE STAGE — ENTIRELY.
+> **No algebraic topology. No category theory. No sheaves, no H¹, no cohomology,
+> no Betti numbers, no "loop count" framing. Not in any answer, not as a gloss,
+> not "briefly."** You said these things in the recorded talk and you cannot deny
+> that. But you do **not** develop them, defend them, or reach for them in Q&A.
+>
+> **If a question goes there, deflect and stop:**
+> *"That's ongoing work — we're writing it up for another venue. Happy to talk offline."*
+>
+> **Every mechanism answer stays in plain graph language:** connections, mixing speed,
+> how many migrants move, how fast a change in one island reaches the rest. That
+> vocabulary is sufficient for every question in these files. Use it.
+
+- **β₁ (first Betti number)** — you introduced it as "the loop count." **Do not use the
+  term, and do not use loop-counting as an explanation.** If the ordering needs
+  explaining, use the corrected connectivity story (and name the volume confound).
+- **The figure-eight vs bridged-loops** — your most vivid example. If asked, the *only*
+  safe line is: "migration flows cancel at the shared junction." **Do not go deeper, and
+  do not name what that obstruction is.**
+- **H¹ sheaf cohomology** — you called it "the full invariant." Unpublished, and banned.
+  If asked for the construction: "we're writing it up." **Then stop.**
+- **The β₁ → λ₂ → H¹ hierarchy** — you presented this arc. **Do not reconstruct it, do not
+  give definitions, do not use it to answer anything.**
 - **"Choose your topology first"** — your practitioner advice. Defensible
-  from the data but not stated in the paper.
+  from the data but not stated in the paper. ⚠️ Note the video *also* advises "monitor λ₂" —
+  and λ₂ is the number we got wrong for the ring. If that is challenged, the advice survives
+  (compute it from the wiring before you run) but you must concede that **you have to compute
+  it on the graph your code actually implements, not the one you think you implemented.**
+  That is, in fact, the moral of the whole erratum.
 
 ### From the ACT 2026 paper (submitted elsewhere, DO NOT discuss):
 - The laxator (natural transformation φ_G). Do not name it.

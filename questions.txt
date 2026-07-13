@@ -13,6 +13,22 @@ belong to the ACT paper and should NOT be raised.
 topology-over-domain" statistic is KNOWN-WRONG. Do not assert it.
 See also questions-extra.md for ~10 hostile follow-up questions.
 
+⚠️⚠️ ALSO KNOWN-WRONG, found the day before the talk (see
+qa-corrections.md section I, and lambda2-correction.md):
+  - The paper's connectivity number for the RING is exactly 2× too
+    large (1.382 → 0.691 at n=5; 0.753 → 0.377 at n=7). The code's
+    ring is a ONE-WAY relay; every other topology does a two-way swap.
+  - THERE IS NO RING/STAR INVERSION AT n=7, and none is predicted.
+    Ring beats star at BOTH sizes. The conclusion's "inversion"
+    sentence is RETRACTED. The n=7 result is a WIDENING GAP.
+  - "Fisher's combined p = 0.14 / ring and star are hard to
+    distinguish" DOES NOT REPRODUCE. Correct value: p = 0.0035,
+    ring ahead in 6/6 domains.
+  - What gets STRONGER: corrected, the rule orders all five
+    topologies in all six domains, Spearman −1.00, nothing fitted.
+  - MUST VOLUNTEER: migrant volume is ALSO rank-perfect with
+    diversity. Connectivity and volume are not separable here.
+
 ---
 
 1. "Your topology ordering is none > ring > star > random > FC — but
@@ -23,13 +39,25 @@ See also questions-extra.md for ~10 hostile follow-up questions.
    convergence is known, yes — Whitley and Skolicki showed this for
    individual domains. What's new is three things: (a) the ordering
    is *identical* across six unrelated domains with perfect rank
-   concordance W=1.0, which has never been demonstrated; (b) the
-   spectral theory predicts the ring/star inversion at n=7 islands,
-   which we confirm with p=6.6×10⁻⁵ — that's a falsifiable
-   quantitative prediction, not just "more connectivity = less
-   diversity"; and (c) framing topology as a compositional property
-   rather than a tuning parameter is what lets us ask *why* the
-   ordering is domain-independent, not just observe that it is.
+   concordance W=1.0, which has never been demonstrated; (b) we have
+   a rule that computes mixing speed from the wiring alone, and —
+   once you fix an error in our own ring number — it orders all five
+   topologies correctly in all six domains, a correlation of minus
+   one with nothing fitted. "More connectivity = less diversity"
+   doesn't tell you a ring beats a star. Our rule does, and it's
+   right every time. It also predicts, out of sample, that the
+   ring/star gap WIDENS when you go to seven islands — and it does,
+   at about three in a hundred thousand; and (c) framing topology as
+   a compositional property rather than a tuning parameter is what
+   lets us ask *why* the ordering is domain-independent, not just
+   observe that it is.
+
+   ⚠️ DO NOT SAY "the theory predicts the ring/star INVERSION at
+   n=7." There is NO inversion — ring beats star at n=5 AND n=7.
+   That sentence is in the paper's conclusion and it is RETRACTED.
+   The n=7 prediction is a WIDENING GAP, not a crossover.
+   Honest caveat to volunteer: migrant volume is also rank-perfect
+   with diversity, so this data can't separate wiring from volume.
 
 2. "You use 10 seeds for fingerprints and only 3 domains. How do you
    know the fingerprint shapes aren't artifacts of your specific
@@ -118,16 +146,35 @@ See also questions-extra.md for ~10 hostile follow-up questions.
    non-standard topologies — small-world, scale-free — to see if λ₂
    fully predicts the diversity ordering?"
 
-   ANSWER: Not yet — we tested ring, star, random Erdős-Rényi, and
-   fully connected. Small-world and scale-free topologies are
-   natural next steps. The random topology result is actually
-   interesting here: its snapshot λ₂ is low but its effective
-   diversity erosion is high, which suggests that for time-varying
-   topologies, the instantaneous λ₂ isn't the whole story — you
-   need the time-averaged spectral properties. For fixed topologies,
-   λ₂ predicts the ordering perfectly across our test set, but we
-   haven't tested enough topologies to rule out confounds with
-   other graph properties like diameter or expansion.
+   ANSWER: Not yet — we tested none, ring, star, random Erdős-Rényi,
+   and fully connected. Small-world and scale-free are the natural
+   next steps and we haven't run them.
+
+   On our five: once we correct the ring number (see the header —
+   our ring is a one-way relay, so its printed connectivity is
+   exactly double what it should be), λ₂ orders all five topologies
+   correctly in all six domains — Spearman minus one, nothing
+   fitted. As printed we got minus nought-point-nine, and the one
+   pair it got wrong was ring versus star. So the rule does better
+   than the paper claims, not worse.
+
+   But I want to be straight about what that does and doesn't buy.
+   Five graphs is five points. The one confound I can't dismiss is
+   migration VOLUME: the number of individuals each topology moves
+   per event — zero, five, eight, ten, twenty — is ALSO perfectly
+   ordered with diversity, in the same six domains. λ₂ and volume
+   are rank-identical across every topology we ran, so this dataset
+   cannot tell you which one is doing the work. Diameter and
+   expansion move together with them too. The experiment that
+   separates them is to push the SAME number of migrants through
+   every shape and vary only the shape — and that's exactly what
+   small-world and scale-free should be run with.
+
+   ⚠️ The old answer here claimed "random's snapshot λ₂ is low but
+   its diversity erosion is high." That is FALSE — random's λ₂ is
+   2.5 at n=5, the second-HIGHEST of the five, and its erosion is
+   correspondingly high. There is no anomaly there. Do not invent a
+   tension that doesn't exist.
 
 8. "Your adaptive strategy collapses to 0.02 diversity. Is that a
    bug or a feature? In practice, adaptive GAs balance exploration

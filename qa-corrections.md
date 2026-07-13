@@ -206,29 +206,48 @@ supplement — anyone with pandas finds this in ten minutes.
   co-evolutionary ones. But you're right that we should say 'metapopulation diversity' and cite
   F_ST. That's a fair hit."
 
-## G. Ring vs star — prep, not a correction
+## G. Ring vs star — ⛔ THIS SECTION IS OBSOLETE. SEE SECTION I.
 
-- The lambda-2 rule (smaller lambda-2 -> higher diversity) points the *wrong way* at n=5:
-  lambda-2(ring) = 1.382 > lambda-2(star) = 1.0 predicts star is more diverse, but we report
-  ring > star. The paper already addresses this (`:388`): it declares the two indistinguishable at
-  n=5 (Fisher's p = 0.14) and stakes the mechanism on the n=7 reversal, which genuinely validates.
-- **Residual tension:** W = 1.0 *requires* ring > star in all six domains, while the n=5 rescue
-  requires them to be *indistinguishable*. Ring does beat star 6/6 (sign test p = 0.031). We can't
-  fully bank on both. Spoken answer: see `questions-extra.md`, Q6.
+> **Everything this section used to say is wrong.** It is kept only so that if you remember
+> reading it, you know it has been superseded. **Do not use any of it on stage.**
+
+It used to say: the lambda-2 rule points the *wrong way* at n=5 (lambda-2(ring) = 1.382 >
+lambda-2(star) = 1.0); the paper rescues this by declaring the two indistinguishable
+(Fisher's p = 0.14) and staking the mechanism on the n=7 reversal; and there is a "residual
+tension" between W = 1.0 and the n=5 rescue.
+
+**Every clause of that is now refuted:**
+
+- **lambda-2(ring) = 1.382 is WRONG.** It is 0.691. The code's ring is a one-way relay. The rule
+  does **not** point the wrong way — it points the right way, and it orders all five topologies
+  correctly in all six domains (Spearman −1.00).
+- **"Fisher's p = 0.14 / indistinguishable" DOES NOT REPRODUCE.** Correct value 0.0035, ring ahead
+  6/6. Ring and star are cleanly separated.
+- **The "n=7 reversal" DOES NOT EXIST.** Ring beats star at n=5 and n=7. The conclusion sentence
+  is RETRACTED.
+- **There is NO residual tension.** It was manufactured entirely by the bad lambda-2 number. W = 1.0
+  and the corrected rule now *agree*: both require ring > star, and ring > star is what we observe.
+
+**Go to section I.** The new confound to worry about is migration *volume*, not ring-vs-star.
 
 ---
 
 ## What holds up — say this plainly
 
 The six-domain ordering (none > ring > star > random > fully connected), **Kendall's W = 1.0 at
-p = 0.00008**, the **68.1% within-domain topology effect**, the **none-vs-fully-connected paired
-contrast (dz = 1.73)**, and the **n=7 confirmatory prediction (p = 6.6e-5)** all reproduce
-exactly — independently re-derived from the raw CSVs. That is the composition result, and it is
-clean.
+p = 0.00008**, the **68.1% within-domain topology effect**, and the **none-vs-fully-connected paired
+contrast (dz = 1.73)** all reproduce exactly — independently re-derived from the raw CSVs. That is
+the composition result, and it is clean.
+
+The **n=7 maze experiment also holds**, but note two things: the recomputed p is **2.7e-5**, not the
+**6.6e-5** printed in the paper (both are tiny — do not quibble about this on stage, but do not
+assert 6.6e-5 as "reproducing exactly" either), and it confirms a **widening ring/star gap**, *not*
+an inversion. See section I.
 
 **This is not a broken paper.** It is a correct paper with a wrong number in its abstract, a
-fabricated ANOVA table, a seed-count error, a confounded fingerprint comparison, and an
-under-reported seventh domain. Concede all five without flinching — and do not let the concessions
+fabricated ANOVA table, a seed-count error, a confounded fingerprint comparison, an under-reported
+seventh domain, and a ring connectivity number that is exactly 2x too large (which, corrected, makes
+the central result *stronger*). Concede all six without flinching — and do not let the concessions
 be mistaken for a retraction of the title.
 
 ## H. The seventh domain (sorting networks) — volunteer it

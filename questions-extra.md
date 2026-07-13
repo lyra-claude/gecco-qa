@@ -74,17 +74,36 @@ companion paper under review — happy to talk offline.")*
 
 ## Q6. "Ring beats star in all six of your domains, but your own spectral rule predicts the opposite at five islands. Which is it?"
 
-> "That's the sharpest question you could ask, and ring versus star is the weak link. At five
-> islands the spectral gap of the ring is larger than the star's, so the rule points the wrong way.
-> The paper's position is that the two are statistically indistinguishable at n equals five —
-> Fisher's p is 0.14 — and we stake the mechanism on the n equals seven reversal, which we
-> predicted in advance and which validates at p equals six times ten to the minus five.
-> But I'll give you the tension honestly: the perfect concordance requires ring to beat star in
-> all six domains, and the n=5 rescue requires them to be a coin flip. Those pull against each
-> other. My best account is that the spectral gap governs the *asymptotic* consensus rate, while
-> diversity at a hundred generations is a *transient* — a ring supports isolation by distance,
-> a star hub reaches everything in one hop. That's a mechanism the gap alone doesn't capture,
-> and I'd rather say so than overclaim."
+> ⚠️ **REWRITTEN — the old answer is dead.** It conceded that the rule points the wrong way, called
+> ring-vs-star "the weak link," leaned on "indistinguishable, Fisher p = 0.14," and staked the
+> mechanism on an n=7 reversal. **All four moves are now wrong.** The rule is fine; the number we
+> *printed* was wrong. Do not concede a defect that does not exist. See `lambda2-correction.md`.
+
+> "You've found a real error, and it isn't the one you think — so let me give you the whole thing.
+>
+> You're right that the number we printed for the ring points the wrong way. That number is wrong.
+> Our ring passes migrants one way round the circle — each island hands copies to its neighbour and
+> gets nothing back — while every other topology in our code does a real two-way swap. So a ring
+> link is half as strong as we said, and the ring's connectivity number as printed is exactly double
+> what it should be.
+>
+> Correct it and the ring drops *below* the star. The rule then predicts ring keeps more diversity
+> than star — which is what we measure, in all six domains. And it isn't just that pair: with the
+> corrected number the rule orders all five topologies correctly in all six domains. A correlation
+> of minus one, nothing fitted. As printed we got minus nought-point-nine, and the one pair it got
+> wrong was exactly ring versus star. Our own error was hiding our own result.
+>
+> Two things follow, and I'll say both. The paper claims ring and star are hard to tell apart, with
+> a combined p of nought-point-one-four. That doesn't reproduce — the correct value is
+> nought-point-nought-nought-three-five, and ring is ahead in all six domains. And the conclusion
+> claims the theory predicts ring and star *swap places* at seven islands. There's no swap, and I
+> retract that sentence. Ring beats star at five islands and at seven. What the seven-island
+> experiment actually shows is the gap getting *wider* — which is what the corrected rule predicts,
+> and it gets the size about right.
+>
+> And the honest caveat, before you ask for it: the number of migrants each topology moves is *also*
+> perfectly ordered with diversity. I can't separate connectivity from volume in this data. The next
+> experiment has to move the same number of migrants through every shape."
 
 ---
 
@@ -109,7 +128,11 @@ companion paper under review — happy to talk offline.")*
 > luck is that the domains are genuinely unrelated — a maze, a knapsack, graph colouring, checkers,
 > a co-evolutionary card game with no fixed landscape — and that the framework made a *falsifiable*
 > prediction about the seven-island case before we ran it, and that prediction held. Concordance
-> alone would be thin; concordance plus a confirmed out-of-sample prediction is what I'd hang it on."
+> alone would be thin; concordance plus a confirmed out-of-sample prediction is what I'd hang it on.
+> To be precise about that prediction, because we described it badly in the paper: it is that the
+> ring-versus-star gap gets *wider* when you go from five islands to seven. It does — thirty seeds,
+> about three in a hundred thousand. It is *not* that they swap places. They don't, and the sentence
+> in our conclusion saying they do is wrong. I retract it."
 
 ---
 
@@ -167,6 +190,13 @@ companion paper under review — happy to talk offline.")*
 - **Never say "our headline reverses."** True sentence, wrong contrast, and it would concede a
   correct paper. See `qa-corrections.md`, Part 1.
 - **Never defend 23.9×, and never volunteer it.**
+- **There is no ring/star swap at seven islands.** Never assert one. Ring beats star at both sizes;
+  the seven-island result is a *widening gap*. The conclusion's "inversion" sentence is retracted.
+- **Never say "hard to distinguish" or "Fisher's p = 0.14."** Does not reproduce. Correct combined
+  p = 0.0035, ring ahead 6/6. See `qa-corrections.md`, section I.
+- **Volunteer the volume confound** whenever the connectivity rule comes up: migrant volume is
+  rank-identical with diversity too, so this data cannot separate them.
 - **Never name the laxator, define the island functor formally, mention the n-island monad,
   Ramanujan graphs, or any LLM / AI-safety work.** See `do-not-discuss/DO-NOT-DISCUSS.md`.
+- **No loop counts, no cohomology, no category-theory vocabulary on stage.** Plain words only.
 - Concede in one sentence, then say what survives in two. Warm, precise, unhurried.

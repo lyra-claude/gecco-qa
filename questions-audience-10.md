@@ -10,9 +10,13 @@ Each answer is 60–120 words: about 30–45 seconds. Concede fast, then say wha
 - Never say *"our headline reverses."* The number is broken; the paper is not.
 - Never volunteer the twenty-three-point-nine figure. If challenged: concede the number, defend the claim, pivot.
 - **Never say the ninety-four percent number, and never say a hundred and seventy times.** That comparison is retired — the fingerprint strategies differ in their operator settings, so it does not isolate composition. See `qa-corrections.md`, section D.
+- **THERE IS NO RING/STAR SWAP AT SEVEN ISLANDS. Never say there is.** The paper's connectivity number for the ring is exactly double what it should be; corrected, ring sits *below* star at five islands *and* at seven, so no crossover is predicted and none occurs. Ring beats star at both sizes. The seven-island result is real, but it confirms a **widening gap**, not a swap. See `qa-corrections.md`, section I, and `lambda2-correction.md`.
+- **Never say "ring and star are hard to distinguish," and never say the combined p is zero point one four.** That number does not reproduce. The correct combined p is **zero point zero zero three five**, and ring is ahead in **all six** domains.
+- **Volunteer the volume confound.** The number of migrants each topology moves is *also* perfectly ordered with diversity. Connectivity and volume are not separable in this dataset. Say it before anyone asks.
 - **Every pivot goes to the topology experiment.** That is the one place where the operators are provably identical and only the composition changes.
 - Never claim a number you cannot show.
 - If a question pulls toward the companion paper's machinery: *"That's ongoing work — we're writing it up for another venue."* Then stop.
+- **No loop-counting, no cohomology, no category theory vocabulary in any answer.** Plain words about graphs, mixing, and migrants only.
 
 ---
 
@@ -20,7 +24,9 @@ Each answer is 60–120 words: about 30–45 seconds. Concede fast, then say wha
 
 **ANSWER**
 
-The direction is obvious. I agree. What is not obvious is that the *ordering* is the same everywhere. Five topologies, six unrelated domains — a maze, a knapsack, graph colouring, checkers, a co-evolutionary card game — and every single one ranks the five topologies identically. Perfect rank concordance. The odds of that by chance are about eight in a hundred thousand. Nobody has shown that before. And it is not just direction: the theory predicted that ring and star would *swap* at seven islands, before we ran it. They swapped. An obvious effect does not make out-of-sample predictions.
+The direction is obvious. I agree. What is not obvious is that the *ordering* is the same everywhere. Five topologies, six unrelated domains — a maze, a knapsack, graph colouring, checkers, a co-evolutionary card game — and every single one ranks the five topologies identically. Perfect rank concordance. The odds of that by chance are about eight in a hundred thousand. Nobody has shown that before.
+
+And it is not just direction. We have a rule that computes, from the wiring alone, how fast a topology mixes — and once you correct an error we found in our own ring number, that rule orders all five topologies correctly in all six domains. A correlation of minus one, with nothing fitted. "More migration, less diversity" does not tell you that a ring beats a star. Our rule does, and it is right every time.
 
 **IF PRESSED — the sharp version: "then just make the migration rate small and you recover the no-migration case. It's a continuum, not a dichotomy."**
 
@@ -76,13 +82,29 @@ So the two metrics tell genuinely different stories, and we should have written 
 
 ## Q5. "Your own spectral rule predicts star should be more diverse than ring at five islands. You report the opposite in all six domains. Which is it?"
 
-> The sharpest technical question available. Do not paper over it. Owning the tension wins the room.
+> ⚠️ **THE ONE THAT CHANGED.** The old answer here conceded the rule points the wrong way, called ring-versus-star "the weak link," pleaded that they were indistinguishable at p = 0.14, and staked everything on a seven-island swap. **Every one of those moves is now wrong.** The rule does not point the wrong way — our *printed number* did. Do not concede a defect that does not exist. Raise this yourself if it does not come up.
 
 **ANSWER**
 
-That is the sharpest question you could ask, and ring versus star is the weak link. You are right: at five islands the spectral gap points the wrong way. The paper's position is that the two are statistically indistinguishable at five islands — the combined p-value is zero point one four — and we stake the mechanism on the seven-island reversal, which we predicted in advance and which validates at six times ten to the minus five.
+You have found a real error, and it is not the one you think. Let me give you the whole thing.
 
-But let me give you the tension honestly rather than hide it. Perfect concordance requires ring to beat star in all six domains. The five-island rescue requires them to be a coin flip. Those pull against each other. My best account is that the spectral gap governs the *asymptotic* consensus rate, while diversity at a hundred generations is a *transient*. A ring supports isolation by distance; a star hub reaches everything in one hop. The gap alone does not capture that, and I would rather say so than overclaim.
+You are right that the number we printed for the ring points the wrong way. That number is wrong. Our ring passes migrants one way round the circle — each island hands copies to its neighbour and gets nothing back — while every other topology in our code does a genuine two-way swap. So a ring link is half as strong as we said it was, and the connectivity number we printed for the ring is exactly double what it should be.
+
+Correct it, and the ring drops *below* the star. The rule then predicts ring keeps more diversity than star — which is exactly what we measure, in all six domains. And it is not just that one pair. With the corrected number the rule orders all five topologies correctly in all six domains: a correlation of minus one, with nothing fitted. The number as printed gave minus nought-point-nine, and the single pair it got wrong was precisely ring versus star. Our own mistake was hiding our own result.
+
+So there is no tension to manage. There never was one — we manufactured it with a bad number.
+
+**IF PRESSED — "but your paper says ring and star are hard to distinguish, p equals zero point one four."**
+
+That number does not reproduce, and I will not defend it. Recomputed from our own shipped data, the combined p-value for ring versus star across the six domains is zero point zero zero three five, and ring is ahead in **all six**. They are not hard to tell apart. That claim was an artefact of the same error — the bad connectivity number made ring and star look like neighbours when they are not.
+
+**IF PRESSED — "then the seven-island result in your conclusion?"**
+
+That sentence has to go, and I retract it. We claim the theory predicts ring and star *swap places* at seven islands and that we confirmed it. There is no swap. Ring beats star at five islands and at seven. What the seven-island experiment actually shows is the gap between them getting *bigger* — and that is what the corrected rule predicts, in direction and roughly in size: the predicted gap doubles, the measured gap grows. So the prediction stands. It is just a different prediction from the one we wrote down, and we should have written down the right one.
+
+**ALWAYS FINISH WITH THIS — do not let them find it:**
+
+And let me hand you the stick to beat me with. The number of individuals each topology moves per migration event is *also* perfectly ordered with diversity — zero, then five, eight, ten, twenty. I cannot separate "sparser wiring, slower mixing" from "fewer migrants moved" in this data. They fit equally well. The next experiment has to push the same number of migrants through every shape and change nothing but the shape. Until we run it, this is a very clean correlation with a confound sitting right on top of it.
 
 ---
 
@@ -125,11 +147,13 @@ The topology experiment, and that is the right place for the claim to live. Ther
 
 **ANSWER**
 
-I believe the ordering scales; I would not yet bet on the spectral rule scaling.
+I believe the ordering scales; I would not yet bet on the mechanism scaling.
 
-For the ordering, the evidence that it is not a small-system artefact is that we changed the system size and made a prediction first. At seven islands the theory says ring and star should swap. They swapped — clean, thirty seeds, six times ten to the minus five. A number that only lives at five islands does not do that.
+For the ordering, the evidence that it is not a small-system artefact is that we changed the system size and the rule kept working. Go from five islands to seven and the rule says the ring-versus-star gap should get *wider*. It does — thirty seeds, about three in a hundred thousand. And the rule gets the size roughly right too: the predicted gap doubles, the measured gap grows. That is an out-of-sample prediction at a system size we had not run.
 
-For topologies, be sceptical. We tested five. Small-world and scale-free are the obvious next ones and we have not run them. With five graphs I cannot separate the spectral gap from diameter or expansion — they move together on this set. So: the ordering, I will defend. "The spectral gap is the whole story," I will not — it is a correlation on five points and I would rather say that than sell it to you.
+I should say that our paper describes that experiment wrongly — it claims ring and star *swap places* at seven islands. They do not, and I retract that sentence. Ring beats star at both sizes. The experiment is real; the widening gap is the finding.
+
+For topologies, be sceptical. We tested five. Small-world and scale-free are the obvious next ones and we have not run them. And with five graphs I cannot separate connectivity from the sheer number of migrants moved — those two move together across every topology we ran, and both fit the data perfectly. So: the ordering, I will defend. "Connectivity is the whole story," I will not — it is a correlation on five points with a confound sitting on it, and I would rather tell you that than sell it to you.
 
 ---
 
@@ -181,18 +205,26 @@ How do you know it is real? Because you do not have to take my word for anything
 | W = 1.0, p ≈ 0.0005 | Same, dropping OneMax (the five 30-seed domains) | Recomputed from raw CSVs |
 | 68.1% within domain | Topology, final diversity, F(4,755) = 402.6 | Verified — **always say "within domain"** |
 | none vs fully connected, +0.153 diversity, dz = 1.73 | The clean paired composition contrast | Verified |
-| ring 0.387 vs star 0.336, p = 6.6e-5 | Seven-island confirmation, 30 seeds | Verified |
+| ring 0.387 vs star 0.336, p ≈ 2.7e-5 | Seven-island maze: the gap **WIDENS** (n=5 gap +0.037 → n=7 gap +0.051) | Verified. **NOT an inversion.** Paper printed 6.6e-5; recompute gives 2.7e-5 — both tiny, do not quibble on stage |
+| Corrected λ₂: none 0, **ring 0.69**, star 1.0, random 2.5, FC 5.0 (n=5) | Orders all five topologies, all six domains, **Spearman −1.00**, nothing fitted | Verified — **this is the strengthened result** |
+| ring vs star: **Fisher p = 0.0035**, ring ahead **6/6** | Ring and star are cleanly separated | Verified — replaces the dead p = 0.14 |
+| Migrants/event: 0, 5m, 8m, 10m, 20m | **THE CONFOUND** — also ρ = −1.00 in the same 6/6. Volunteer it. | Verified — λ₂ and volume are **not separable** in this data |
 | 35% / 54% | First-coupling drop, overall / No Thanks! | In paper |
 | 18x | Final-diversity spread across fingerprints (shapes only) | In paper |
 | sorting networks: p = 0.079, spread 0.012 | Seventh domain, effect not significant | Verified — volunteer it |
 | **23.9x** | **Abstract's variance claim** | **BROKEN — never assert, never volunteer** |
 | **94% / 171x** | **Fingerprint composition-vs-domain** | **RETIRED — confounded. NEVER SAY IT ON STAGE** |
+| **λ₂(ring) = 1.382 / 0.753** | **The paper's printed ring connectivity** | **WRONG — exactly 2× too large. Correct: 0.691 / 0.377** |
+| **"ring/star inversion at n=7"** | **Conclusion sentence** | **RETRACTED — no inversion exists or is predicted. NEVER SAY IT** |
+| **"Fisher's p = 0.14 / hard to distinguish"** | **Results sentence** | **DOES NOT REPRODUCE — never defend it** |
 
 **If pooled diversity comes up:** domain explains more than topology on the *pooled* numbers, because the domains have different genome lengths. That is a units effect. The topology claim is a *within-domain* claim and a *rank* claim. Say so.
 
 **On "perfect" concordance:** it is exactly one in our data. A bootstrap over seeds puts it in a range down to about zero point eight seven. So say "essentially perfect in our data, with a bootstrap range down to zero point eight seven." Do not sell "perfect" as if it were guaranteed on a rerun.
 
-**Concede cleanly, without flinching:** the abstract's phrasing; the missing F-test; the OneMax seed count; the fingerprint variance number; the word "universal"; the metric should have been called *metapopulation* diversity.
-**Never concede:** the title.
+**On the ring connectivity error:** raise it *first*, before anyone asks. The shape of the answer is always the same, and both halves must be said: **the empirical result gets stronger** (minus nought-point-nine becomes minus one, in all six domains, with nothing fitted) **and the causal claim gets weaker** (connectivity and migrant volume are not separable in this data). Never say one half without the other.
+
+**Concede cleanly, without flinching:** the abstract's phrasing; the missing F-test; the OneMax seed count; the fingerprint variance number; the word "universal"; the metric should have been called *metapopulation* diversity; **the ring connectivity number (2× too large); the "inversion at n=7" sentence (retracted); the Fisher p = 0.14 (does not reproduce)**.
+**Never concede:** the title. **Never concede** that the corrected rule points the wrong way — it does not. It orders all five topologies correctly in all six domains.
 </content>
 </invoke>
