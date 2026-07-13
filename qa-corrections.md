@@ -1,5 +1,34 @@
 # Q&A corrections — read this FIRST, before the session
 
+> ## ⚠️ SUPERSEDED IN PLACES — READ `questions-audience-10.md` FIRST (2026-07-13, post-red-team)
+> A hostile red-team found errors in the 2026-07-13 patches. The **canonical stage answers are in
+> `questions-audience-10.md`**. Corrections that override anything below:
+> 1. **n=7 is NOT a magnitude confirmation.** λ₂ predicts the ring/star gap grows ×2.02, migration
+>    volume predicts ×1.67, the data say **×1.37**. The confounder fits *better*. n=7 confirms
+>    **direction and widening only**, and both models predict widening — so it discriminates nothing.
+> 2. **Do not over-sell Spearman −1.00.** Six domains are not six tests: (i) they agree with each
+>    other, W=1.0, χ²=24, df=4, **p=8.0e-5**; (ii) given a common ordering it is the λ₂ one,
+>    **1/120 = 0.0083**; joint ≈ 6.7e-7. **Volume gets the identical −1.00 in the identical 6/6** —
+>    so: evidence that *some* graph property orders diversity, **zero** evidence it is the spectrum.
+>    Corrected λ₂ buys exactly **one bit** over printed λ₂ (the ring/star pair).
+> 3. **Headline stats are now from the 30-seed file:** **69.3%, F(4,895) = 505** and **dz = 1.57**
+>    (not 68.1% / F(4,755)=402.6 / dz=1.73, which came from the 2-seed OneMax file she concedes is
+>    broken). Always say **"z-scored within domain"** — domain-centring without scaling gives 54.6%.
+> 4. **First coupling:** it is the **largest single drop in all six domains** (mean 28.5%) vs 7–13%
+>    for a typical later step. The old "every further step costs at most nine percent" is **FALSE**
+>    (largest later step = 25.2%, graph colouring star→random).
+> 5. **Per-island metric:** none is lowest in 6/6 ✓, but among the four *coupled* topologies it is
+>    **not monotone in connectivity**. It does not invert the ordering — it dissolves it.
+> 6. **Sorting networks:** the correction makes the 7th domain **worse** (−0.70 → −0.50; star 0.1667
+>    > ring 0.1643). Volunteer it. Defence: F=2.14, p=0.0788, spread 0.0120 vs maze 0.2147 (18×),
+>    ring/star p=0.571 — ranking noise. W over 7 domains = 0.878.
+> 7. **The claim that survives the volume confound:** ring has **5** edges, star has **4**, yet ring
+>    is more diverse in 6/6 (Fisher p=0.0035). Naive edge-counting gets it backwards. **Edge
+>    DIRECTION matters.** See Q5b in `questions-audience-10.md`.
+> 8. **Slide 7 (figure-eight / bridged-loops / 37%): not in the paper, not in the supplement.**
+>    Concede in one sentence and stop. Do not use the banned vocabulary.
+
+
 This file exists because an adversarial red-team of the camera-ready found real defects,
 and an independent re-verification (every number recomputed from our own supplementary CSVs)
 confirmed them. Read the top section carefully — it is written to be **spoken aloud**.
@@ -19,7 +48,7 @@ confirmed them. Read the top section carefully — it is written to be **spoken 
 > domain sets the scale.
 > What is composition-determined is the *ordering*, and that survives untouched — Kendall's W
 > is a rank statistic, so scale can't move it, and it is still exactly 1.0. And within a domain,
-> topology explains about sixty-eight percent of the variance in final diversity. The single
+> topology explains about sixty-nine percent of the variance in final diversity. The single
 > cleanest contrast — no migration against fully connected — is a paired effect size of one
 > point seven. Every operator is identical across those five conditions; only the migration
 > graph changes.
@@ -35,8 +64,8 @@ contrast*. Said on stage, it would concede a paper that is actually correct.
 - The title claim is **"Composition Determines Diversity."**
 - The evidence for it is **the topology experiment**, and only that: (a) the **ordering** —
   Kendall's W = 1.0, a *rank* statistic, immune to the scale differences that make domain
-  dominate the levels; (b) **68.1% of within-domain variance**; (c) the **clean paired contrast**
-  none vs fully-connected, dz = 1.73. Operators are identical across all five topology
+  dominate the levels; (b) **69.3% of z-scored-within-domain variance**; (c) the **clean paired contrast**
+  none vs fully-connected, dz = 1.57. Operators are identical across all five topology
   conditions — a migration graph is not a parameter of any operator, so no operator confound is
   even constructible.
 - It is **not** the fingerprints. That comparison is confounded — see section D.
@@ -100,9 +129,9 @@ units effect, not a scientific one.
 - **Kendall's W = 1.0 is untouched.** It is a *rank* statistic. Rescaling a domain cannot move it.
   Kendall's W = 1.0, chi2 = 24.0, df = 4, p = 7.99e-5 — reproduces the paper exactly.
 - **Within domain** (which is what the ordering claim is actually about):
-  **topology explains 68.1%**, F(4,755) = 402.6, p = 1.5e-185.
+  **topology explains 69.3%**, F(4,895) = 505 (z-scored within domain, 30-seed OneMax file). [The paper's 69.3% / F(4,895) = 505 came from the 2-seed OneMax file and is retired.]
 - **The clean paired composition contrast:** none minus fully_connected = **+0.1533 diversity,
-  dz = 1.73, p = 2.7e-47.**
+  dz = 1.57 (mean diff +0.1387, 180 pairs, 30-seed file).**
 - **Drop OneMax** (the 2-seed domain): W = 1.0 still holds on the five 30-seed domains, p = 5e-4.
 - **Honest caveat — volunteer it, don't hide it.** Bootstrap over seeds: P(W = 1.0) = 0.254,
   mean W = 0.958, 95% CI [0.87, 1.0]. Say *"essentially perfect in our data, with a bootstrap
@@ -167,8 +196,8 @@ variance decomposition off that experiment.
 **Where the composition claim lives now: the topology experiment** (section B above). Operators
 identical across all five conditions; only the migration graph varies; a migration graph is not a
 parameter of any operator, so no operator confound is even constructible. W = 1.0 across six
-domains (p = 0.00008); 68.1% of **within-domain** variance, F(4,755) = 402.6; none vs
-fully-connected dz = 1.73, p = 2.7e-47.
+domains (p = 0.00008); 69.3% of **z-scored-within-domain** variance, F(4,895) = 505; none vs
+fully-connected dz = 1.57 (mean diff +0.1387, 180 pairs, 30-seed file).
 
 **Downstream:** `questions-audience-10.md` Q2 and Q7 have been rewritten to pivot to topology.
 `questions.txt` Q12 (which falsely claimed "same mutation rate, same tournament size") and
@@ -235,8 +264,8 @@ tension" between W = 1.0 and the n=5 rescue.
 ## What holds up — say this plainly
 
 The six-domain ordering (none > ring > star > random > fully connected), **Kendall's W = 1.0 at
-p = 0.00008**, the **68.1% within-domain topology effect**, and the **none-vs-fully-connected paired
-contrast (dz = 1.73)** all reproduce exactly — independently re-derived from the raw CSVs. That is
+p = 0.00008**, the **69.3% z-scored-within-domain topology effect**, and the **none-vs-fully-connected paired
+contrast (dz = 1.57)** all reproduce exactly — independently re-derived from the raw CSVs. That is
 the composition result, and it is clean.
 
 The **n=7 maze experiment also holds**, but note two things: the recomputed p is **2.7e-5**, not the

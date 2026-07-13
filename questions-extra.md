@@ -1,5 +1,34 @@
 # questions-extra.md — hostile / probing questions, with spoken answers
 
+> ## ⚠️ SUPERSEDED IN PLACES — READ `questions-audience-10.md` FIRST (2026-07-13, post-red-team)
+> A hostile red-team found errors in the 2026-07-13 patches. The **canonical stage answers are in
+> `questions-audience-10.md`**. Corrections that override anything below:
+> 1. **n=7 is NOT a magnitude confirmation.** λ₂ predicts the ring/star gap grows ×2.02, migration
+>    volume predicts ×1.67, the data say **×1.37**. The confounder fits *better*. n=7 confirms
+>    **direction and widening only**, and both models predict widening — so it discriminates nothing.
+> 2. **Do not over-sell Spearman −1.00.** Six domains are not six tests: (i) they agree with each
+>    other, W=1.0, χ²=24, df=4, **p=8.0e-5**; (ii) given a common ordering it is the λ₂ one,
+>    **1/120 = 0.0083**; joint ≈ 6.7e-7. **Volume gets the identical −1.00 in the identical 6/6** —
+>    so: evidence that *some* graph property orders diversity, **zero** evidence it is the spectrum.
+>    Corrected λ₂ buys exactly **one bit** over printed λ₂ (the ring/star pair).
+> 3. **Headline stats are now from the 30-seed file:** **69.3%, F(4,895) = 505** and **dz = 1.57**
+>    (not 68.1% / F(4,755)=402.6 / dz=1.73, which came from the 2-seed OneMax file she concedes is
+>    broken). Always say **"z-scored within domain"** — domain-centring without scaling gives 54.6%.
+> 4. **First coupling:** it is the **largest single drop in all six domains** (mean 28.5%) vs 7–13%
+>    for a typical later step. The old "every further step costs at most nine percent" is **FALSE**
+>    (largest later step = 25.2%, graph colouring star→random).
+> 5. **Per-island metric:** none is lowest in 6/6 ✓, but among the four *coupled* topologies it is
+>    **not monotone in connectivity**. It does not invert the ordering — it dissolves it.
+> 6. **Sorting networks:** the correction makes the 7th domain **worse** (−0.70 → −0.50; star 0.1667
+>    > ring 0.1643). Volunteer it. Defence: F=2.14, p=0.0788, spread 0.0120 vs maze 0.2147 (18×),
+>    ring/star p=0.571 — ranking noise. W over 7 domains = 0.878.
+> 7. **The claim that survives the volume confound:** ring has **5** edges, star has **4**, yet ring
+>    is more diverse in 6/6 (Fisher p=0.0035). Naive edge-counting gets it backwards. **Edge
+>    DIRECTION matters.** See Q5b in `questions-audience-10.md`.
+> 8. **Slide 7 (figure-eight / bridged-loops / 37%): not in the paper, not in the supplement.**
+>    Concede in one sentence and stop. Do not use the banned vocabulary.
+
+
 Supplement to `questions.txt`. These are the questions a reviewer who has actually
 **read the supplement and run the CSVs** would ask. Read `qa-corrections.md` first —
 it has the forensics behind these answers.
@@ -16,9 +45,9 @@ Every answer here is written to be **spoken**. Short, plain, honest, non-defensi
 > phrasing is wrong. What the paper's claim actually rests on is the topology experiment,
 > where every operator is identical across the five conditions and the only thing that changes
 > is the migration graph. The ordering is the same in all six domains — Kendall's W is a rank
-> statistic and it's exactly one. Within a domain, topology explains sixty-eight percent of the
+> statistic and it's exactly one. Within a domain, topology explains sixty-nine percent of the
 > variance in final diversity. And no-migration against fully-connected is a paired effect size
-> of one point seven. The abstract attached the wrong number to a claim that holds without it.
+> of about one point six. The abstract attached the wrong number to a claim that holds without it.
 > Thank you for reading the supplement — genuinely."
 
 ---
@@ -29,7 +58,7 @@ Every answer here is written to be **spoken**. Short, plain, honest, non-defensi
 > there's no ANOVA in that code, and the F-values in that table don't have a source I can point
 > you to. That's an error and we'll correct it. Run the analysis honestly on the topology data —
 > and I have — and the result holds: the ordering is the same in all six domains, and within a
-> domain topology explains sixty-eight percent of the variance in final diversity. That one I
+> domain topology explains sixty-nine percent of the variance in final diversity. That one I
 > will stand behind."
 
 ---
@@ -67,7 +96,7 @@ companion paper under review — happy to talk offline.")*
 > variance decomposition on raw diversity *levels*, domain dominates, exactly as you'd expect.
 > That's why the claim is about the *ordering*, not the levels. Kendall's W is a rank statistic:
 > rescaling a domain cannot change it, and it's 1.0. And if you z-score within each domain, so
-> every domain is on the same footing, topology explains about sixty-eight percent of what's left.
+> every domain is on the same footing, topology explains about sixty-nine percent of what's left.
 > The genome-length effect is real, and it's orthogonal to what we're claiming."
 
 ---
@@ -138,8 +167,15 @@ companion paper under review — happy to talk offline.")*
 
 ## Q9. "Your diversity metric is pooled over the whole metapopulation. Within an island, doesn't migration *increase* diversity? Doesn't that invert your ordering?"
 
-> "Yes — and that's in our own supplement, in the per-island columns. Within an island, diversity
-> goes *up* with connectivity, and the no-migration case is actually last on that metric.
+> ⚠️ **CORRECTED 2026-07-13 — the old concession below was FALSE. Use the Q4 answer in
+> `questions-audience-10.md`.** No-migration IS lowest on the per-island metric in 6/6 ✓, but the
+> per-island metric is **not monotone in connectivity** among the four *coupled* topologies (maze:
+> random > FC; graph colouring: star max, random min; No Thanks!: ring max). It does not **invert**
+> the ordering — it **dissolves** it. Concede the first step (none → any coupling raises
+> within-island diversity, Wright 1931) and nothing more.
+>
+> "Yes — and that's in our own supplement, in the per-island columns. Turning migration on raises
+> within-island diversity, and the no-migration case is last on that metric.
 > That's Wright's island model: migration converts between-deme variance into within-deme variance.
 > So the two metrics genuinely tell different stories, and we should have said 'metapopulation
 > diversity' and cited F_ST. That's a fair hit. What we measure is the total genotypic spread of
@@ -157,8 +193,8 @@ companion paper under review — happy to talk offline.")*
 > could be.
 > The ordering over topologies is *identical* across six unrelated domains — that's a rank
 > statistic, it's immune to the scale differences between domains, and it's exact. Within a
-> domain, topology explains sixty-eight percent of the variance in final diversity. And
-> no-migration against fully-connected is a paired effect size of one point seven. The abstract
+> domain, topology explains sixty-nine percent of the variance in final diversity. And
+> no-migration against fully-connected is a paired effect size of about one point six. The abstract
 > attached a broken number to a claim that stands without it."
 
 ---

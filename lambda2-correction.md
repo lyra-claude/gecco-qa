@@ -88,8 +88,42 @@ The paper's λ₂ gets −0.90 in every domain, and it is wrong on **exactly the
 the single pair the correction touches. The corrected λ₂ gets **−1.00 in 6/6 domains**. The
 error was *suppressing* the paper's own result.
 
-(Sorting networks, the 7th domain, still violates the ordering. That was already a known scope
-condition and it survives the correction unchanged.)
+### 3.1 How much this is worth — read this before quoting −1.00
+
+The −1.00 in 6/6 is **not six independent tests.** The six domains all produce the *identical*
+ordering, and that identity *is* the concordance result. The honest decomposition is two facts:
+
+| | statistic | p |
+|---|---|---|
+| (i) the six domains agree **with each other** | Kendall W = 1.0, χ² = 24, df = 4 | **8.0 × 10⁻⁵** |
+| (ii) **given** a common ordering, it is *the λ₂ ordering* | 1 permutation of 5 items | **1/120 = 0.0083** |
+| joint | | **≈ 6.7 × 10⁻⁷** |
+
+**And the caveat that must always be attached: migration volume achieves the identical −1.00 in
+the identical 6/6** (see §5). So this is strong evidence that *some* property of the migration
+graph orders diversity, and **zero evidence that the spectrum is that property.** The entire
+discriminative content of corrected-λ₂ over published-λ₂ is **one bit**: the ring/star pair.
+
+### 3.2 The correction makes sorting networks WORSE — do not bury this
+
+Sorting networks, the 7th domain, still violates the ordering, and **the correction degrades its
+fit rather than improving it: −0.70 → −0.50.** In that domain star (0.1667) > ring (0.1643) —
+the opposite of what corrected λ₂ predicts.
+
+The defence is that those ranks are noise, and it is a real defence, but it must be *offered*,
+not withheld:
+
+| | sorting networks | maze |
+|---|---|---|
+| one-way ANOVA of topology | **F(4,145) = 2.14, p = 0.0788** (n.s.) | significant |
+| spread across all 5 topologies | **0.0120** | **0.2147** (**17.9×**) |
+| ring vs star (Welch) | **p = 0.571** | 0.016 |
+
+The topology effect in sorting networks is not significant and the response is nearly flat, so its
+ranks are reading seed noise, not graph structure. It is a **scope condition** — the effect
+requires a domain in which diversity can move. Kendall's W over all **7** domains = **0.878**.
+
+This is the most findable objection in the *public* supplement. Volunteer it.
 
 ---
 
@@ -109,15 +143,28 @@ what the data show. Nothing crosses over.
 The n=7 maze experiment is real and it is not the confirmation the paper claims — it is a
 *different*, better confirmation. The gap does not flip sign; it **widens**:
 
-| | ring | star | gap | p (Welch) | corrected λ₂ gap (star − ring) |
-|---|---|---|---|---|---|
-| maze, n=5 | 0.3156 ± 0.0438 | 0.2785 ± 0.0689 | **+0.0371** | 0.016 | 0.309 |
-| maze, n=7 | 0.3872 ± 0.0275 | 0.3362 ± 0.0528 | **+0.0510** | 2.7 × 10⁻⁵ | 0.623 |
+| | ring | star | gap | p (Welch) | corrected λ₂ gap (star − ring) | volume gap (star − ring) |
+|---|---|---|---|---|---|---|
+| maze, n=5 | 0.3156 ± 0.0438 | 0.2785 ± 0.0689 | **+0.0371** | 0.016 | 0.309 | 3m |
+| maze, n=7 | 0.3872 ± 0.0275 | 0.3362 ± 0.0528 | **+0.0510** | 2.7 × 10⁻⁵ | 0.623 | 5m |
 
-The corrected rule predicts the widening in **direction and magnitude**: the λ₂ gap roughly
-doubles (0.309 → 0.623, ×2.02) and the observed diversity gap grows (+0.0371 → +0.0510, ×1.37).
+The corrected rule predicts the widening in **direction only.** It does **not** get the magnitude
+right, and the claim that it does — made in an earlier draft of this document — is withdrawn:
+
+| model | predicted growth of the ring/star gap, n=5 → n=7 |
+|---|---|
+| corrected λ₂ | **×2.02** (0.309 → 0.623) |
+| migration volume | **×1.67** (3m → 5m) |
+| **observed diversity gap** | **×1.37** (+0.0371 → +0.0510) |
+
+**The confounder fits better than the theory.** And both models predict a *widening* gap, so the
+n=7 experiment **discriminates nothing** between them. What it does establish: the gap does not
+flip sign (killing the paper's printed prediction), it widens, and it does so at a system size we
+had not run. That is a genuine out-of-sample result and it is a weaker one than the paper claims.
+It must not be sold as a magnitude confirmation.
+
 The paper's λ₂ predicts a sign flip that does not occur. The correction converts a false
-prediction into a true one.
+prediction into a true but **non-discriminating** one.
 
 The sentence at `:512` must be replaced. Suggested wording:
 
@@ -197,6 +244,34 @@ shape. `generic_migrate(..., volume_mode='per_event')` in `onemax_stats.py` alre
 volume by edge count and is the right instrument. Until that is run, the λ₂ story is a *correlation
 with a perfect confound*, not a mechanism.
 
+### 5.1 What the confound does and does not destroy
+
+**Volume is not an alternative to topology — volume is a *function* of topology.** Every condition
+used the identical migration parameter (rate 0.1, every 5 generations, **per edge**). No volume was
+ever set by hand; the graph determined it (0, 5m, 8m, 10m, 20m). The rival hypothesis is therefore
+*"topology acts through edge throughput rather than through the spectrum"* — still a compositional
+claim. **The confound threatens the spectral mechanism; it does not threaten the topology effect.**
+
+**And "just count the migrants" is refuted by our own data in its naive form.** At n=5 the **ring
+has 5 edges and the star has 4.** Naive edge-counting predicts the ring is the better-connected
+graph and hence the *less* diverse one. The data say the opposite: **ring > star in 6/6, Fisher
+p = 0.0035.** To get that pair right you must notice that the ring's edges are **one-way** and the
+star's are two-way swaps (this is the same fact that produced the λ₂ error). The non-obvious,
+falsifiable content of this study is therefore:
+
+> **Edge *direction* matters, and any account that ignores it gets ring/star backwards.**
+
+**The limit, stated precisely.** These data separate *edge-counting* from *directed throughput*.
+They **cannot** separate *spectrum* from *throughput* — those are rank-identical on every graph
+run. Only the fixed-migrants-per-event experiment above can, and it has not been run.
+
+### 5.2 Defence of the symmetrisation (for a spectral graph theorist)
+
+A directed cycle is **weight-balanced**: in-degree = out-degree = 1 at every node. For balanced
+digraphs, consensus/averaging dynamics converge at a rate governed by λ₂ of the **mirror graph**
+(the symmetrised Laplacian) — **Olfati-Saber & Murray, IEEE TAC 2004**. Symmetrising is therefore
+the correct object here, not a convenience. It would *not* be legitimate for an unbalanced digraph.
+
 ---
 
 ## 6. Secondary finding: the OneMax seed count in the Figure 1 caption is false
@@ -215,15 +290,18 @@ analysis at the 30-seed file or by amending the caption to say 2.
 | claim | status |
 |---|---|
 | Universal ordering none > ring > star > random > FC, 6 domains | **holds** |
-| Sorting networks violate the ordering (scope condition) | **holds** |
+| Sorting networks violate the ordering (scope condition) | **holds — and the correction makes it WORSE: −0.70 → −0.50** |
 | λ₂(ring) = 1.382 (n=5), 0.753 (n=7) | **wrong — exactly 2× too large** |
-| Spearman(diversity, λ₂) | **improves: −0.90 → −1.00 in 6/6** |
+| Spearman(diversity, λ₂) | **improves: −0.90 → −1.00 in 6/6 — but this is 1 bit, not 6 tests (§3.1)** |
 | "ring/star inversion at n=7, confirmed" (`:512`) | **RETRACTED — no inversion exists or is predicted** |
-| n=7 maze result itself (p = 2.7 × 10⁻⁵) | **holds — and now confirms a correct prediction** |
+| n=7 maze result itself (p = 2.7 × 10⁻⁵) | **holds — confirms DIRECTION + WIDENING only** |
+| "the corrected rule gets the n=7 magnitude right" | **WITHDRAWN — predicted ×2.02, volume ×1.67, observed ×1.37. Volume fits better; both predict widening, so it discriminates nothing** |
 | "Fisher's combined p = 0.14" (`:388`) | **DOES NOT REPRODUCE — correct value 0.0035** |
 | "ring and star hard to distinguish" (`:388`) | **RETRACTED — ring > star in 6/6, p = 0.0035** |
 | λ₂ as the *mechanism* | **NOT ESTABLISHED — perfectly confounded with migration volume** |
-| OneMax n=30 seeds (Fig. 1 caption) | **false caption; conclusions unaffected** |
+| The topology *effect* (as against the spectral mechanism) | **holds — volume is a function of topology, not a rival to it (§5.1)** |
+| Edge **direction** matters (ring 5 edges > star 4 edges, yet ring more diverse, 6/6) | **holds — the one claim that survives the confound** |
+| OneMax n=30 seeds (Fig. 1 caption) | **false caption; conclusions unaffected. Headline stats recomputed on the 30-seed file: 69.3%, F(4,895)=505, dz=1.57** |
 
 The correction makes the empirical result stronger and the causal claim weaker. Both halves of
 that sentence must be said out loud.
