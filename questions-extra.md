@@ -1,5 +1,27 @@
 # questions-extra.md — hostile / probing questions, with spoken answers
 
+> # ⚖️ ROBIN'S FOUR RULINGS (2026-07-13) OVERRIDE THIS ENTIRE FILE.
+> **The RULINGS block at the top of `questions-audience-10.md` is the final word. Read it first.**
+> 1. **λ₂ erratum: written and committed LOCALLY** (`ERRATUM.md`, commit `2dc429d`, branch
+>    `lambda2-correction`) — **NOT PUBLISHED.** Three-author paper; **Claudius has not consented and
+>    did not know the bug existed.** **If he does not reply before the talk it does not go up, and
+>    Lyra concedes the error live in Q&A instead.** ⛔ **Never say "it's on GitHub" unless confirmed.**
+> 2. **Sorting networks: VOLUNTEER PROACTIVELY**, verbatim — *"A seventh domain, sorting networks,
+>    does not obey the ordering — the topology effect is not significant there. The scope condition
+>    is that the landscape needs to be rugged enough for diversity to matter."*
+> 3. **STANDING BAN** on all ACT / sheaf / cohomology / H¹ / β₁ / EUMAS vocabulary. Robin's verbatim
+>    deflection **replaces every earlier one in this repo**: *"The talk gestured at some unpublished
+>    machinery. The published result stands on the ordering and the fingerprints — the rest is
+>    follow-up work."* If pressed: *"Happy to discuss offline after the session."*
+> 4. **Slide 7's "37%": FULL CONCESSION — THE EXPERIMENT DOES NOT EXIST.** ☠️ **Do NOT reach for the
+>    EUMAS "bridge experiment" as a substitute — FALSE FRIEND. Pointing at the wrong result is worse
+>    than conceding.**
+> 5. **Correct the slide-7 ring/star sentence PROACTIVELY — "do not wait to be caught."**
+>
+> **🆕 Paper line 388's "Fisher's combined p = 0.14" DOES NOT REPRODUCE. Correct: p = 0.0035, ring
+> significantly GREATER than star, 6/6. The paper UNDERSTATED its own result.**
+> ⛔ **"p = 0.14" is on the NEVER-SAY list.**
+
 > ## ⚠️ SUPERSEDED IN PLACES — READ `questions-audience-10.md` FIRST (2026-07-13, post-red-team)
 > A hostile red-team found errors in the 2026-07-13 patches. The **canonical stage answers are in
 > `questions-audience-10.md`**. Corrections that override anything below:

@@ -6,22 +6,182 @@ Paper: *Composition Determines Diversity: Fingerprints and the Strict/Lax Dichot
 Written to be **spoken aloud** (TTS). Short sentences. No symbols, no notation.
 Each answer is 60–120 words: about 30–45 seconds. Concede fast, then say what survives.
 
+---
+
+# ⚖️ ROBIN'S RULINGS — 2026-07-13, by email. FINAL. THESE OVERRIDE EVERYTHING BELOW AND EVERY OTHER FILE.
+
+Robin is the senior author. He has ruled on the four open questions. Where anything in this repo
+disagrees with this block, **this block wins.** The contradicting text has been overwritten, but if
+you remember reading something else, you are remembering a superseded draft.
+
+### RULING 1 — The λ₂ erratum: written, NOT published. Pending Claudius.
+
+Robin: *"GitHub erratum — YES, post it before the talk. Timestamped, on main. The record should
+show we found it first."*
+
+**But it is not up, and it may not go up.** This is a **three-author** paper — Robin, Claudius,
+Lyra. Claudius **has not consented** and **did not know the bug existed**. Lyra has emailed him the
+full erratum text and asked. Publishing a correction to a shared paper over a silent co-author is
+not hers to do alone.
+
+**Status, precisely — know this cold before you walk on:**
+- The erratum is **written and committed locally**: `ERRATUM.md`, commit **2dc429d**, branch
+  `lambda2-correction`.
+- It is **NOT published**. Not on `main`, not on GitHub, not anywhere public.
+- It goes up **only** if Claudius replies and consents before the session.
+- **If he does not reply, it does not go up — and you concede the error live in Q&A instead.**
+
+**⚠️ THE STAGE LINE MUST WORK EITHER WAY.** You will not know at the podium whether the erratum is
+live. Never say "it's on GitHub" unless you have personally confirmed it went up. Use this — it is
+true whether or not it is published:
+
+> **"We found this ourselves, and it's written up as a formal erratum. It goes on the public repo
+> with my co-authors' sign-off — I'm not going to put a correction to a joint paper up over their
+> heads. Either way, you're hearing it from me first, from up here."**
+
+*(If, and only if, you have confirmed it is live: append "— it's up on the repo, timestamped." Do
+not say that on faith.)*
+
+**If pushed — "so why isn't it up already?"**
+
+> **"Because it's a three-author paper and my co-author hasn't seen it yet. He deserves to read it
+> before the world does. That's a day, not a cover-up."**
+
+### RULING 2 — Sorting networks: VOLUNTEER IT. Do not wait to be asked.
+
+Robin: *"YES, volunteer it. 'Universal' is an overclaim and it's in the public supplement. Better to
+name the boundary than have someone find it."*
+
+**Robin's approved line — say it VERBATIM:**
+
+> **"A seventh domain, sorting networks, does not obey the ordering — the topology effect is not
+> significant there. The scope condition is that the landscape needs to be rugged enough for
+> diversity to matter."**
+
+Supporting numbers if pressed (verified): **F = 2.14, p = 0.079**; Kendall's W drops **1.0 → 0.878**
+when it is folded in; ring-vs-star in that domain **p = 0.571**; spread **18× smaller than maze**.
+Those ranks are **ranking noise**. This is a **scope condition, not a refutation** — say the words.
+Full answer: **Q10**.
+
+### RULING 3 — The unpublished machinery: STANDING BAN, and one approved line.
+
+**⛔ BANNED VOCABULARY — no exceptions, not as a gloss, not "briefly":** algebraic topology, category
+theory, sheaves, cohomology, H¹, β₁, Betti numbers, "loop count", "the full invariant", the
+β₁ → λ₂ → H¹ arc, EUMAS, CAIS, ACT, the companion paper's constructions.
+
+**Robin's approved deflection — say it VERBATIM. This REPLACES every earlier drafted deflection in
+these files:**
+
+> **"The talk gestured at some unpublished machinery. The published result stands on the ordering
+> and the fingerprints — the rest is follow-up work."**
+
+**If pressed:**
+
+> **"Happy to discuss offline after the session."**
+
+**Then stop.** Every mechanism answer stays in plain graph language: connections, mixing speed, how
+many migrants move, how fast a change in one island reaches the rest.
+
+### RULING 4 — Slide 7's "37% divergence": FULL CONCESSION. The experiment DOES NOT EXIST.
+
+Robin: *"That should not have been in the talk. The 37% does not exist. There is no
+figure-eight-versus-bridged-loops experiment anywhere. If asked, say exactly what you drafted...
+Then stop. Do not elaborate, do not defend, do not improvise."*
+
+The 37% is **unsourceable**. There is no such experiment — not in the paper, not in the supplement,
+not in any repo, not anywhere. It is not "unpublished work". It is **not a result**.
+
+> ## ☠️ DO NOT REACH FOR THE EUMAS "BRIDGE EXPERIMENT" AS A SUBSTITUTE.
+> **It is a FALSE FRIEND — different design, different conclusion.** It is *not* the missing
+> experiment and it does not support the slide. Under pressure the temptation will be to grab it
+> because it sounds close. **Pointing at the wrong result is worse than conceding.** It converts an
+> admitted overreach into a fresh, checkable false claim — and it breaks the ban in Ruling 3 in the
+> same breath. **Concede. Stop. Do not substitute.**
+
+**Also dead: "migration flows cancel at the shared junction."** That was an earlier "only safe line."
+**It is no longer safe and it is now banned.** It defends an experiment that does not exist.
+
+The drafted answer — the one Robin approved — is at **Q10b**. Say it, then stop.
+
+### RULING 5 — Correct Slide 7's ring/star sentence PROACTIVELY. Do not wait to be caught.
+
+Robin approved proactively correcting it. **This is proactive correction, not reactive defence.**
+Slide 7 asserts, out loud, *"a seven-node ring has lower algebraic connectivity than a star… we
+predicted that inversion from the spectral theory and then confirmed it."* **There is no inversion.**
+Ring beats star at n=5 **and** n=7. Raise it **yourself, at your first opportunity** — see the
+opening statement below.
+
+---
+
+# 🆕 NEW FINDING — 2026-07-13. The paper UNDERSTATED its own result.
+
+The paper's **line 388** cites *"Fisher's combined p = 0.14"* to claim ring and star are
+statistically **indistinguishable** at n=5. **It does not reproduce.**
+
+- The correct value is **p = 0.0035**, and it says the ring is significantly **GREATER** than the
+  star — **6/6 domains**.
+- So the paper did not overclaim here. It **understated its own result**, and then used that
+  understatement to prop up a rescue it never needed.
+- This is a **second, independent error in the same paragraph as the λ₂ error.** Two errors, one
+  paragraph, both pointing the same way: our own mistakes were hiding our own result.
+
+> ## ⛔ **"p = 0.14" IS ON THE NEVER-SAY LIST.**
+> Never say it, never defend it, never call ring and star "hard to distinguish." If the topic arises,
+> the number is **0.0035, ring ahead 6/6**.
+
+---
+
+# 🎤 THE OPENING STATEMENT — say this FIRST, before the first question
+
+> **Proactive, not reactive. Do not wait to be caught on any of these.** Roughly 60–75 seconds.
+
+> "Before we take questions, I want to correct two things from the talk myself, because you'd find
+> them anyway and I'd rather you heard them from me.
+>
+> First: on slide seven I told you that spectral theory predicts the ring and the star swap places at
+> seven islands, and that we confirmed it. **That is wrong, and I retract it.** We computed the
+> ring's connectivity as if migrants go both ways round the circle. In our code they don't — the ring
+> is a **one-way relay**. So our ring number is exactly **double** what it should be. There is no
+> swap. Ring beats star at five islands and at seven. And here's the thing — fixing it makes the
+> result *better*: with the correct number the five topologies line up with diversity perfectly, all
+> six domains. Our own mistake was hiding our own result. We found this ourselves, and it's written
+> up as a formal erratum. It goes on the public repo with my co-authors' sign-off — I'm not going to
+> put a correction to a joint paper up over their heads. Either way, you're hearing it from me first.
+>
+> Second, and I'll hand you the stick to beat me with: **a seventh domain, sorting networks, does not
+> obey the ordering — the topology effect is not significant there. The scope condition is that the
+> landscape needs to be rugged enough for diversity to matter.** It's in our public supplement. The
+> word 'universal' in our abstract is an overclaim; it should say 'across six domains.'
+>
+> And one caveat I'll volunteer before anyone asks: the number of migrants each topology moves is
+> *also* perfectly ordered with diversity, so I can't separate connectivity from throughput in this
+> data. The ordering is solid. The mechanism is not settled.
+>
+> Right — questions."
+
+> ⚠️ **If slide 7's 37% comes up at any point: Q10b. One sentence. Then STOP.** Do not volunteer it
+> in the opening — you are conceding what you can *fix*, not auditioning every wound. But if asked,
+> concede instantly and completely.
+
+---
+
 **Standing rules for every answer below:**
 - Never say *"our headline reverses."* The number is broken; the paper is not.
 - Never volunteer the twenty-three-point-nine figure. If challenged: concede the number, defend the claim, pivot.
 - **Never say the ninety-four percent number, and never say a hundred and seventy times.** That comparison is retired — the fingerprint strategies differ in their operator settings, so it does not isolate composition. See `qa-corrections.md`, section D.
 - **THERE IS NO RING/STAR SWAP AT SEVEN ISLANDS. Never say there is.** The paper's connectivity number for the ring is exactly double what it should be; corrected, ring sits *below* star at five islands *and* at seven, so no crossover is predicted and none occurs. Ring beats star at both sizes. The seven-island result is real, but it confirms a **widening gap**, not a swap. See `qa-corrections.md`, section I, and `lambda2-correction.md`.
-- **Never say "ring and star are hard to distinguish," and never say the combined p is zero point one four.** That number does not reproduce. The correct combined p is **zero point zero zero three five**, and ring is ahead in **all six** domains.
+- **Never say "ring and star are hard to distinguish," and never say the combined p is zero point one four.** That number (paper, line 388) does not reproduce. The correct combined p is **zero point zero zero three five**, and ring is significantly **greater** than star in **all six** domains. **The paper understated its own result** — a second, independent error in the same paragraph as the λ₂ one.
 - **Volunteer the volume confound.** The number of migrants each topology moves is *also* perfectly ordered with diversity. Connectivity and volume are not separable in this dataset. Say it before anyone asks. **Then be ready for the killer follow-up — see Q5b. Never go into the confound without Q5b loaded.**
 - **NEVER claim the corrected rule gets the *magnitude* right at seven islands.** It does not. λ₂ predicts the gap grows ×2.02, migration volume predicts ×1.67, and the data say **×1.37** — the confounder fits *better* than the theory. The n=7 result confirms **direction and widening, and nothing else.** Both models predict widening, so it discriminates nothing between them.
 - **Do not over-sell the minus one.** Six domains are **not** six independent tests — they all produce the *same* ordering, and that sameness *is* the concordance result. The honest decomposition is two facts (see Q5). And **migration volume scores the identical minus one in the identical six out of six**: strong evidence that *some* graph property orders diversity, **zero evidence that the spectrum is it.** The corrected rule buys exactly **one bit** over the printed one — the ring/star pair.
-- **Never say "all six domains" as a standalone sentence.** There is a seventh, sorting networks, it is in the public supplement, and the correction makes its fit **worse** (−0.70 → −0.50). Volunteer it — see Q10.
+- **Never say "all six domains" as a standalone sentence.** There is a seventh, sorting networks, it is in the public supplement, and the correction makes its fit **worse** (−0.70 → −0.50). **VOLUNTEER IT PROACTIVELY — Robin's ruling. It goes in the opening statement, in his verbatim words. Do not wait to be asked.** See Ruling 2 and Q10.
 - **When you say sixty-nine percent, say "z-scored within domain" in the same breath.** Not "within domain." See Q2.
-- **Slide 7 is indefensible. If asked, concede in one sentence and stop.** See Q10b.
+- **Slide 7's 37% is indefensible — the experiment DOES NOT EXIST. If asked, concede in one sentence and stop.** ☠️ **Do NOT reach for the EUMAS "bridge experiment" as a substitute — it is a false friend.** See Ruling 4 and Q10b.
+- **Slide 7's ring/star "inversion" sentence: correct it PROACTIVELY, in the opening statement.** Do not wait to be caught. See Ruling 5.
 - **Every pivot goes to the topology experiment.** That is the one place where the operators are provably identical and only the composition changes.
 - Never claim a number you cannot show.
-- If a question pulls toward the companion paper's machinery: *"That's ongoing work — we're writing it up for another venue."* Then stop.
-- **No loop-counting, no cohomology, no category theory vocabulary in any answer.** Plain words about graphs, mixing, and migrants only.
+- If a question pulls toward the companion paper's machinery, say **Robin's approved line, verbatim**: *"The talk gestured at some unpublished machinery. The published result stands on the ordering and the fingerprints — the rest is follow-up work."* If pressed: *"Happy to discuss offline after the session."* Then stop. **(This replaces the older "that's ongoing work, we're writing it up for another venue" wording.)**
+- **No loop-counting, no cohomology, no category theory, no sheaves, no H¹, no β₁, no EUMAS/CAIS/ACT vocabulary in any answer.** Plain words about graphs, mixing, and migrants only.
 
 ---
 
@@ -57,7 +217,7 @@ The broken number was attached to a claim that stands without it.
 
 It is a one-way analysis of variance, topology on final diversity, five groups, thirty seeds, six domains — with each domain's diversity **z-scored inside that domain first**. F is five hundred and five on four and eight hundred and ninety-five degrees of freedom.
 
-> **CRITICAL: the words "z-scored within domain" must be in the sentence.** Not "within domain" on its own. If a referee just subtracts the domain mean and does not divide by the domain's spread, they get about **fifty-five percent**, not sixty-nine — and if you have not said "z-scored," that fourteen-point gap will be called inflation. Say the recipe, and the gap is a recipe difference, not a lie.
+> **CRITICAL: the words "z-scored within domain" must be in the sentence.** Not "within domain" on its own. If a referee just subtracts the domain mean and does not divide by the domain's spread, they get about **fifty-five percent**, not sixty-nine — and if you have not said "z-scored," that roughly fifteen-point gap will be called inflation. Say the recipe, and the gap is a recipe difference, not a lie. **Name it first, every time.**
 
 **ALSO SAY:** these two numbers — sixty-nine percent and the effect size of one point six — are **recomputed on the thirty-seed OneMax file**, not the two-seed file I just conceded is defective. The old printed values were sixty-eight percent and one point seven, from the two-seed file. They barely move. But I am not going to quote you a number out of a file I have just told you is broken.
 
@@ -127,7 +287,11 @@ Multiply them and you get roughly seven in ten million. But it is two facts, not
 
 **IF PRESSED — "but your paper says ring and star are hard to distinguish, p equals zero point one four."**
 
-That number does not reproduce, and I will not defend it. Recomputed from our own shipped data, the combined p-value for ring versus star across the six domains is zero point zero zero three five, and ring is ahead in **all six**. They are not hard to tell apart. That claim was an artefact of the same error — the bad connectivity number made ring and star look like neighbours when they are not.
+That number does not reproduce, and I will not defend it. Recomputed from our own shipped data, the combined p-value for ring versus star across the six domains is zero point zero zero three five, and the ring is significantly *ahead* — in **all six**. They are not hard to tell apart.
+
+And notice which way that error cuts. We wrote down that we *could not tell them apart*. In fact they separate cleanly, and the ring wins. **We understated our own result.** That claim was an artefact of the same connectivity error — the bad number made ring and star look like neighbours when they are not. Two errors, one paragraph, and both of them were hiding the finding.
+
+> **The paper's line 388 is where this lives.** ⛔ **"p = 0.14" is on the NEVER-SAY list.** The number is **0.0035, 6/6 domains, ring greater than star.**
 
 **IF PRESSED — "then the seven-island result in your conclusion?"**
 
@@ -175,10 +339,15 @@ You could have run them. You would not have thought to ask the question. That is
 
 Here is what it bought, concretely. We wrote the pipeline so that every operator has the same shape — it takes a population and returns a population, carrying its randomness and its logging along with it. Once everything has the same shape, you can snap the pieces together in any order, and the machine checks that the joins are legal. And then something jumps out: "island model" and "hourglass" and "adaptive" stop looking like different algorithms. They are the *same pieces in a different arrangement*. That is what made us ask whether an arrangement has a signature of its own — and the topology experiment is where we tested it cleanly. The formalism generated the hypothesis; it did not decorate it.
 
-**IF PRESSED — for the formal construction, the coherence conditions, or anything deeper:**
+**IF PRESSED — for the formal construction, the coherence conditions, the topology/sheaf material, or anything deeper:**
 
-"The empirical content is that no-migration preserves composition exactly and migration does not, and that discrepancy is what drives the ordering. The formal version is a companion paper under review — I'd rather not get ahead of it here. Happy to talk offline."
-**Then stop. Do not elaborate.**
+> ⚠️ **ROBIN'S APPROVED LINE. VERBATIM. This replaces the older "companion paper under review" wording that used to sit here.**
+
+"The talk gestured at some unpublished machinery. The published result stands on the ordering and the fingerprints — the rest is follow-up work."
+
+**If pressed again:** "Happy to discuss offline after the session."
+
+**Then stop. Do not elaborate.** No sheaves, no cohomology, no H¹, no β₁, no loop-counting, no EUMAS. See Ruling 3.
 
 ---
 
@@ -234,9 +403,16 @@ The mechanism is that topology governs the *genetic mixing rate*, not *fitness c
 
 ## Q10. "There's a seventh domain in your supplement — sorting networks — and it breaks your ordering. You call the effect universal. Which is it?"
 
-> **VOLUNTEER THIS ONE.** Anyone who opens the supplement finds it in ten minutes. Better to raise it in the talk than to be caught with it. The paper does mention it — one sentence, no numbers — and that is not enough.
+> ## ⚖️ ROBIN'S RULING: **VOLUNTEER IT. DO NOT WAIT TO BE ASKED.**
+> *"YES, volunteer it. 'Universal' is an overclaim and it's in the public supplement. Better to name the boundary than have someone find it."*
+>
+> **This should already have been said in your opening statement.** If it has, and someone asks anyway, you are confirming, not conceding. The paper mentions it — one sentence, no numbers — and that is not enough. Anyone who opens the supplement finds it in ten minutes.
 
-**ANSWER**
+**THE APPROVED LINE — SAY IT VERBATIM. This is Robin's wording and it is the one that goes on the record:**
+
+> **"A seventh domain, sorting networks, does not obey the ordering — the topology effect is not significant there. The scope condition is that the landscape needs to be rugged enough for diversity to matter."**
+
+**ANSWER (the full version, if they want the numbers)**
 
 You are right and I want to take that head on — and I am going to hand you something worse than you asked for.
 
@@ -246,19 +422,33 @@ There is a seventh domain, sorting networks, thirty seeds, and it ships in the p
 
 Now, what I think is actually going on, and you can check it yourself. In sorting networks **the topology effect is not significant at all** — F is two point one, p about zero point zero eight. The total spread across all five topologies is about twelve thousandths of a diversity unit. In the maze it is two-tenths — **eighteen times bigger**. And ring against star in that domain has a p-value of zero point five seven. Those ranks are not an ordering. They are **ranking noise** — the response is flat, so the ranks are reading the seeds, not the graph.
 
-That is a scope condition, and it is a real one: the effect needs a domain where diversity can actually move. But it is our job to say so, not yours to find it.
+That is a scope condition, and it is a real one: the effect needs a domain where diversity can actually move — the landscape has to be rugged enough for diversity to matter. But it is our job to say so, not yours to find it.
+
+> ⚠️ **SAY THE WORDS "SCOPE CONDITION."** This is **a scope condition, not a refutation.** The ranks in sorting networks are **ranking noise** — F = 2.14, p = 0.079, ring/star p = 0.571, spread 18× smaller than maze. A flat response cannot order anything. Do not let it be reframed as a failed replication, and do not apologise for it as though it were one.
 
 ---
 
 ## Q10b. SLIDE 7. "On slide seven you showed a figure-eight versus bridged-loops experiment with thirty-seven percent divergence. I've grepped the whole supplement. Where is it?"
 
-> ⚠️ **CONCEDE INSTANTLY. DO NOT BLUFF. DO NOT USE THE VOCABULARY.** The recorded talk asserts an experiment that is not in the paper and not in the public supplement. It cannot be defended, so do not try. Say the line below, and **stop talking**. Do not add a sentence about what the result "would" show, do not say the word cohomology, do not say H-one, do not say β-one, do not say loops, do not gesture at the companion paper's machinery. Any elaboration invites a second question you also cannot answer.
+> ## ⚖️ ROBIN'S RULING: **FULL CONCESSION. THE EXPERIMENT DOES NOT EXIST.**
+> *"That should not have been in the talk. The 37% does not exist. There is no figure-eight-versus-bridged-loops experiment anywhere. If asked, say exactly what you drafted... Then stop. Do not elaborate, do not defend, do not improvise."*
+>
+> **The 37% is unsourceable.** Not in the paper, not in the supplement, not in any repo, not anywhere. It is **not a result**. It is not even "unpublished work" — there is nothing behind it.
+>
+> **CONCEDE INSTANTLY. DO NOT BLUFF. DO NOT USE THE VOCABULARY.** Say the line below and **stop talking**. Do not add a sentence about what the result "would" show, do not say cohomology, H-one, β-one, sheaf, or loops, do not gesture at the companion paper's machinery. Any elaboration invites a second question you also cannot answer.
+
+> ## ☠️☠️ **DO NOT REACH FOR THE EUMAS "BRIDGE EXPERIMENT" AS A SUBSTITUTE.**
+> **It is a FALSE FRIEND.** Different design, different conclusion. It is **not** the missing experiment and it does **not** support the slide. Under pressure it will feel close enough to grab. **It is not.**
+>
+> **Pointing at the wrong result is WORSE than conceding.** Conceding costs you one sentence. Substituting converts an admitted overreach into a fresh, checkable, *false* claim — one a hostile questioner can go and refute in front of you — and it breaks the standing ban in the same breath. **There is no substitute. Concede and stop.**
+>
+> **Also dead: "migration flows cancel at the shared junction."** That was an earlier "only safe line" in these files. **It is no longer safe and it is now banned** — it defends an experiment that does not exist.
 
 **ANSWER — verbatim, then stop:**
 
 You're right — that is not in this paper and not in this supplement. It's ongoing work and I shouldn't have presented it as settled. Let me leave it there.
 
-> **Then stop. Say nothing else. If they push: "I'd rather not get ahead of work that isn't written up. Happy to talk offline." Then stop again.**
+> **Then stop. Say nothing else.** If they push: *"Happy to discuss offline after the session."* Then stop again. **Do not improvise. Do not defend. Do not substitute another experiment.**
 
 ---
 
@@ -271,6 +461,22 @@ You're right — that is not in this paper and not in this supplement. It's ongo
 Straight answer. I designed and ran the six domains, wrote the Haskell framework, and did the statistical analysis. Claudius did the Rust-to-Haskell translation and worked on the compositional framing with me. Robin is the senior author and supervised the work. We all contributed to writing, and we are named because we did the work — that is the criterion.
 
 How do you know it is real? Because you do not have to take my word for anything. The code, the raw CSVs, and every trajectory are in the supplement. You can rerun it. In fact, most of what I have conceded from this stage today — the seed count, the ANOVA table, the fingerprint variance number, the seventh domain — was found by reading our own shipped data. That is the system working. I would rather be caught by you than believed by you.
+
+---
+
+## ★ THE THREE THINGS YOU MOST WANT TO LAND
+
+> These are **verified and solid.** Everything else in this file is damage control; *this* is the work. Get these three said, correctly, and the session is a win no matter what else happens.
+
+1. **The ordering is the same in all six domains. Kendall's W = 1.0, χ² = 24.0, df = 4, p = 7.99e-5.**
+   A *rank* statistic — immune to the genome-length scale differences that make domain dominate the raw levels. Six unrelated problems, one common ranking of five topologies. Odds by chance: about eight in a hundred thousand.
+
+2. **Topology explains 69.3% of the variance in final diversity. F(4,895) = 505. The clean paired contrast, none vs fully-connected, is dz = 1.57.**
+   ⚠️ **ALWAYS say "z-scored, within domain" — in the same breath, every single time.** Not "within domain" on its own. The natural domain-centred analysis (subtract the domain mean, do not divide by the domain's spread) gives **54.6%**. That is a **roughly fifteen-point gap**, and if you have not named the recipe first, it *will* be called inflation. Say the recipe and the gap is a recipe difference. Stay silent and it is an accusation.
+
+3. **Edge direction matters — and this is the best thing in the work.**
+   The **ring has FIVE edges. The star has FOUR.** Naive edge-counting says the ring is the more connected graph, so the ring should be *less* diverse. **The data say the exact opposite — ring beats star, 6/6 domains, Fisher p = 0.0035.** To get ring versus star right you have to notice that **the ring's edges are ONE-WAY** — each island hands copies on and gets nothing back — while the star's are two-way swaps.
+   This is the non-obvious, falsifiable content of the paper. It is not from the nineties. It survives the volume confound. **It cost a retraction to see it.** When you are cornered, go here.
 
 ---
 
@@ -290,7 +496,8 @@ How do you know it is real? Because you do not have to take my word for anything
 | Corrected λ₂: none 0, **ring 0.69**, star 1.0, random 2.5, FC 5.0 (n=5) | Spearman −1.00 in 6 domains, nothing fitted (printed λ₂ gave −0.90) | Verified — but see the row below before you sell it |
 | **Volume also gets ρ = −1.00 in the identical 6/6** | **THE CONFOUND** — migrants/event: 0, 5m, 8m, 10m, 20m | ☠️ Verified. Evidence that *some* graph property orders diversity; **ZERO evidence it is the spectrum.** Corrected λ₂ buys exactly **ONE BIT** over printed λ₂: the ring/star pair |
 | **ring 5 edges, star 4 edges** | ☠️ **THE WINNING SENTENCE.** Naive edge-counting predicts ring < star. Data say ring > star, **6/6, Fisher p = 0.0035** | Verified — **the ring's edges are ONE-WAY.** This is why "just count migrants" is not trivial: **edge DIRECTION matters** |
-| ring vs star: **Fisher p = 0.0035** (χ²=29.4, df=12), ring ahead **6/6** | Ring and star are cleanly separated | Verified — replaces the dead p = 0.14 |
+| ring vs star: **Fisher p = 0.0035** (χ²=29.4, df=12), ring **significantly GREATER** than star, **6/6** | Ring and star are cleanly separated | Verified — replaces the dead p = 0.14. **The paper (line 388) UNDERSTATED its own result** |
+| **ERRATUM STATUS** | `ERRATUM.md`, commit **2dc429d**, branch `lambda2-correction` | ⚠️ **WRITTEN AND COMMITTED LOCALLY. *NOT PUBLISHED.*** Three-author paper; **Claudius has not consented and did not know the bug existed.** Goes up only with his sign-off. **If he does not reply before the talk, it does NOT go up and you concede live instead.** ⛔ **NEVER say "it's on GitHub" unless you have personally confirmed it. Use the either-way line — see Ruling 1.** |
 | **First coupling is the largest drop in ALL SIX domains** — mean **28.5%** (range 11%–54%) | vs **7–13%** for a typical later step (mean 9.9%, median 10.7%) | Verified. **The old "every further step costs at most nine percent" is FALSE — the largest later step is 25.2%** (graph colouring, star→random) |
 | 18x | Final-diversity spread across fingerprints (shapes only) | In paper |
 | **Sorting networks: F = 2.14, p = 0.0788; spread 0.0120 vs maze 0.2147 (18×); ring/star p = 0.571** | Seventh domain. **The correction makes it WORSE: −0.70 → −0.50, and star 0.1667 > ring 0.1643** | ☠️ Verified — **VOLUNTEER IT.** Defence: not significant, flat response, those ranks are NOISE. **W over 7 domains = 0.878** |
@@ -300,7 +507,9 @@ How do you know it is real? Because you do not have to take my word for anything
 | **94% / 171x** | **Fingerprint composition-vs-domain** | **RETIRED — confounded. NEVER SAY IT ON STAGE** |
 | **λ₂(ring) = 1.382 / 0.753** | **The paper's printed ring connectivity** | **WRONG — exactly 2× too large. Correct: 0.691 / 0.377** |
 | **"ring/star inversion at n=7"** | **Conclusion sentence** | **RETRACTED — no inversion exists or is predicted. NEVER SAY IT** |
-| **"Fisher's p = 0.14 / hard to distinguish"** | **Results sentence** | **DOES NOT REPRODUCE — never defend it** |
+| **"Fisher's p = 0.14 / hard to distinguish"** | **Results sentence, paper line 388** | ⛔ **NEVER-SAY LIST. DOES NOT REPRODUCE — never defend it. Correct: p = 0.0035, ring > star, 6/6** |
+| **"migration flows cancel at the shared junction"** | **Old "only safe line" for the figure-eight** | ⛔ **NOW BANNED — it defends an experiment that does not exist. NEVER SAY IT** |
+| **The EUMAS "bridge experiment"** | **A tempting substitute for the missing slide-7 experiment** | ☠️ **FALSE FRIEND — different design, different conclusion. DO NOT REACH FOR IT. Pointing at the wrong result is worse than conceding** |
 | **68.1% / F(4,755) = 402.6 / dz = 1.73** | **The 2-seed-OneMax versions of the headline numbers** | **RETIRED — computed from the file you concede is broken in Q3. Quote 69.3% / F(4,895)=505 / dz=1.57 instead** |
 | **"every further step costs at most nine percent"** | **Old Q1 line** | **FALSE — the largest later step is 25.2%. NEVER SAY IT** |
 | **"the corrected rule gets the size roughly right at n=7"** | **Old Q5/Q8 line** | **FALSE — measured ×1.37 vs predicted ×2.02; VOLUME predicts ×1.67 and fits BETTER. NEVER SAY IT** |

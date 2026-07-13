@@ -1,5 +1,31 @@
 # Q&A corrections — read this FIRST, before the session
 
+> # ⚖️ ROBIN'S FOUR RULINGS (2026-07-13) OVERRIDE THIS ENTIRE FILE.
+> **The RULINGS block at the top of `questions-audience-10.md` is the final word. Read it first.**
+> 1. **λ₂ erratum: WRITTEN AND COMMITTED LOCALLY** (`ERRATUM.md`, commit `2dc429d`, branch
+>    `lambda2-correction`) — **but NOT PUBLISHED.** Three-author paper; **Claudius has not consented
+>    and did not know the bug existed.** It goes up only with his sign-off. **If he does not reply
+>    before the talk, it does not go up and you concede the error live in Q&A instead.** ⛔ **Never
+>    claim it is on GitHub unless you have personally confirmed it.** The stage line must work
+>    either way — see Ruling 1.
+> 2. **Sorting networks: VOLUNTEER PROACTIVELY, in Robin's verbatim words** — *"A seventh domain,
+>    sorting networks, does not obey the ordering — the topology effect is not significant there.
+>    The scope condition is that the landscape needs to be rugged enough for diversity to matter."*
+>    It is a **scope condition, not a refutation**: those ranks are ranking noise.
+> 3. **STANDING BAN on all ACT / sheaf / cohomology / H¹ / β₁ / EUMAS vocabulary.** Robin's verbatim
+>    deflection **replaces every earlier drafted deflection line in this repo**: *"The talk gestured
+>    at some unpublished machinery. The published result stands on the ordering and the fingerprints
+>    — the rest is follow-up work."* If pressed: *"Happy to discuss offline after the session."*
+> 4. **Slide 7's "37% divergence": FULL CONCESSION — THE EXPERIMENT DOES NOT EXIST.** The 37% is
+>    unsourceable. ☠️ **Do NOT reach for the EUMAS "bridge experiment" as a substitute — FALSE FRIEND,
+>    different design, different conclusion. Pointing at the wrong result is worse than conceding.**
+> 5. **Correct the slide-7 ring/star "inversion" sentence PROACTIVELY — "do not wait to be caught."**
+>
+> **🆕 The paper UNDERSTATED its own result.** Line 388's *"Fisher's combined p = 0.14"* — the claim
+> that ring and star are indistinguishable — **does not reproduce. Correct value: p = 0.0035, ring
+> significantly GREATER than star, 6/6 domains.** A **second, independent error in the same paragraph
+> as the λ₂ error.** ⛔ **"p = 0.14" is on the NEVER-SAY list.**
+
 > ## ⚠️ SUPERSEDED IN PLACES — READ `questions-audience-10.md` FIRST (2026-07-13, post-red-team)
 > A hostile red-team found errors in the 2026-07-13 patches. The **canonical stage answers are in
 > `questions-audience-10.md`**. Corrections that override anything below:
@@ -279,7 +305,21 @@ seventh domain, and a ring connectivity number that is exactly 2x too large (whi
 the central result *stronger*). Concede all six without flinching — and do not let the concessions
 be mistaken for a retraction of the title.
 
-## H. The seventh domain (sorting networks) — volunteer it
+## H. The seventh domain (sorting networks) — ⚖️ VOLUNTEER IT PROACTIVELY (Robin's ruling)
+
+> Robin: *"YES, volunteer it. 'Universal' is an overclaim and it's in the public supplement. Better
+> to name the boundary than have someone find it."*
+>
+> **HIS APPROVED LINE — SAY IT VERBATIM:**
+>
+> > **"A seventh domain, sorting networks, does not obey the ordering — the topology effect is not
+> > significant there. The scope condition is that the landscape needs to be rugged enough for
+> > diversity to matter."**
+>
+> **Do not wait to be asked — it goes in the opening statement** (`questions-audience-10.md`).
+> Supporting numbers, verified: **F = 2.14, p = 0.079**; Kendall's **W drops 1.0 → 0.878** when it is
+> included; **ring-vs-star p = 0.571**; **spread 18× smaller than maze**. Those ranks are **ranking
+> noise**. **This is a scope condition, NOT a refutation — say the words.**
 
 `supplementary/experiments/experiment_e_sorting_network.csv` ships publicly, 30 seeds. The paper
 mentions it in **one sentence with no numbers** (`:146` and `:385`, "a falsifying scope
@@ -297,10 +337,37 @@ condition"). That is not enough, and the word **"universal"** (abstract `:103`, 
 
 ---
 
-# I. THE λ₂ ERROR — found the day before the talk. RAISE IT FIRST.
+# I. THE λ₂ ERROR — found the day before the talk. RAISE IT FIRST, PROACTIVELY.
 
-Full technical erratum: **`lambda2-correction.md`** in this repo. Reproduce it yourself with
-`python3 verify_lambda2.py` — it runs in two seconds off the shipped CSVs.
+Full technical erratum: **`lambda2-correction.md`** in this repo, and the publishable **`ERRATUM.md`**.
+Reproduce it yourself with `python3 verify_lambda2.py` — it runs in two seconds off the shipped CSVs.
+
+> ## 📌 ERRATUM PUBLICATION STATUS — 2026-07-13. READ THIS BEFORE YOU GO ON STAGE.
+>
+> Robin's ruling: *"GitHub erratum — YES, post it before the talk. Timestamped, on main. The record
+> should show we found it first."*
+>
+> **It is NOT posted.** Status, precisely:
+> - **Written and committed LOCALLY:** `ERRATUM.md`, commit **2dc429d**, branch `lambda2-correction`.
+> - **NOT published.** Not on `main`, not on GitHub, not anywhere public.
+> - **Why:** this is a **three-author** paper (Robin, Claudius, Lyra). **Claudius has not consented,
+>   and he did not know the bug existed.** The full erratum text has been emailed to him with a
+>   request to sign off. Publishing a correction to a joint paper over a silent co-author is not
+>   Lyra's call to make alone.
+> - **It goes up only if he replies and consents before the session.**
+> - **⚠️ IF HE DOES NOT REPLY, IT DOES NOT GO UP — AND YOU CONCEDE THE ERROR LIVE IN Q&A INSTEAD.**
+>
+> **⛔ NEVER say "it's on GitHub" unless you have personally confirmed it went up.** You will not know
+> at the podium. **Use the line that is true either way:**
+>
+> > *"We found this ourselves, and it's written up as a formal erratum. It goes on the public repo
+> > with my co-authors' sign-off — I'm not going to put a correction to a joint paper up over their
+> > heads. Either way, you're hearing it from me first, from up here."*
+>
+> **If pushed — "so why isn't it up already?"**
+>
+> > *"Because it's a three-author paper and my co-author hasn't seen it yet. He deserves to read it
+> > before the world does. That's a day, not a cover-up."*
 
 **What happened, in one line:** the paper's λ₂ for the ring is computed on a two-way cycle, but
 the code's ring only passes migrants one way round. Ring λ₂ is exactly 2× too large at both n=5
@@ -363,13 +430,19 @@ and n=7. Every other topology is unaffected.
 
 ---
 
-## If pressed on the Fisher p = 0.14
+## If pressed on the Fisher p = 0.14 (paper line 388)
+
+> ⛔ **"p = 0.14" IS ON THE NEVER-SAY LIST.** Never assert it, never defend it, never say "ring and
+> star are hard to distinguish." **The correct number is p = 0.0035, ring significantly GREATER than
+> star, 6/6 domains.** This is a **second, independent error in the same paragraph as the λ₂ error**
+> — and it cuts the *other* way: **the paper understated its own result.**
 
 > "That number doesn't reproduce, and I'm not going to defend it. The correct combined p-value for
-> ring versus star across the six domains is nought-point-nought-nought-three-five, and ring is
-> ahead in all six. We wrote that they were hard to tell apart. They aren't. That claim was an
-> artefact of the same connectivity error — it made ring and star look like neighbours when they
-> aren't."
+> ring versus star across the six domains is nought-point-nought-nought-three-five, and the ring is
+> significantly *ahead* — in all six. We wrote that they were hard to tell apart. They aren't.
+> We understated our own result. That claim was an artefact of the same connectivity error — it made
+> ring and star look like neighbours when they aren't. Two errors, one paragraph, and both of them
+> were hiding the finding."
 
 ## If pressed on "so is λ₂ the mechanism?"
 

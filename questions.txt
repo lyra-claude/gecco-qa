@@ -13,6 +13,34 @@ belong to the ACT paper and should NOT be raised.
 topology-over-domain" statistic is KNOWN-WRONG. Do not assert it.
 See also questions-extra.md for ~10 hostile follow-up questions.
 
+⚖️⚖️ ROBIN'S FOUR RULINGS (2026-07-13) OVERRIDE THIS ENTIRE FILE.
+Read the RULINGS block at the top of questions-audience-10.md FIRST.
+  1. λ2 ERRATUM: written and committed LOCALLY (ERRATUM.md, commit
+     2dc429d, branch lambda2-correction) but NOT PUBLISHED. This is a
+     THREE-AUTHOR paper and CLAUDIUS HAS NOT CONSENTED — he did not know
+     the bug existed. It goes up only with his sign-off. IF HE DOES NOT
+     REPLY BEFORE THE TALK, IT DOES NOT GO UP, AND YOU CONCEDE THE ERROR
+     LIVE IN Q&A INSTEAD. NEVER say "it's on GitHub" unless you have
+     personally confirmed it. Use the either-way stage line (Ruling 1).
+  2. SORTING NETWORKS: VOLUNTEER PROACTIVELY. Robin's verbatim line —
+     "A seventh domain, sorting networks, does not obey the ordering —
+     the topology effect is not significant there. The scope condition
+     is that the landscape needs to be rugged enough for diversity to
+     matter." Scope condition, NOT a refutation. Do not wait to be asked.
+  3. STANDING BAN on ALL algebraic-topology / sheaf / cohomology / H1 /
+     beta-1 / EUMAS vocabulary. Robin's approved deflection, VERBATIM —
+     "The talk gestured at some unpublished machinery. The published
+     result stands on the ordering and the fingerprints — the rest is
+     follow-up work." If pressed: "Happy to discuss offline after the
+     session." THIS REPLACES EVERY EARLIER DEFLECTION LINE IN THIS FILE.
+  4. SLIDE 7's "37% divergence": FULL CONCESSION. THE EXPERIMENT DOES
+     NOT EXIST. The 37% is unsourceable. DO NOT reach for the EUMAS
+     "bridge experiment" as a substitute — it is a FALSE FRIEND
+     (different design, different conclusion). Pointing at the wrong
+     result is WORSE than conceding. Concede in one sentence, then STOP.
+  5. Correct the slide-7 ring/star "inversion" sentence PROACTIVELY.
+     "Do not wait to be caught."
+
 ⚠️⚠️ ALSO KNOWN-WRONG, found the day before the talk (see
 qa-corrections.md section I, and lambda2-correction.md):
   - The paper's connectivity number for the RING is exactly 2× too
@@ -22,8 +50,11 @@ qa-corrections.md section I, and lambda2-correction.md):
     Ring beats star at BOTH sizes. The conclusion's "inversion"
     sentence is RETRACTED. The n=7 result is a WIDENING GAP.
   - "Fisher's combined p = 0.14 / ring and star are hard to
-    distinguish" DOES NOT REPRODUCE. Correct value: p = 0.0035,
-    ring ahead in 6/6 domains.
+    distinguish" (paper LINE 388) DOES NOT REPRODUCE. Correct value:
+    p = 0.0035, ring significantly GREATER than star, 6/6 domains.
+    THE PAPER UNDERSTATED ITS OWN RESULT. This is a SECOND, INDEPENDENT
+    error in the SAME PARAGRAPH as the lambda-2 error.
+    "p = 0.14" IS ON THE NEVER-SAY LIST.
   - What gets STRONGER: corrected, the rule orders all five
     topologies in all six domains, Spearman −1.00, nothing fitted.
   - MUST VOLUNTEER: migrant volume is ALSO rank-perfect with

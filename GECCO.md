@@ -1,5 +1,35 @@
 # GECCO.md — Live Q&A Briefing
 
+> # ⚖️ ROBIN'S FOUR RULINGS (2026-07-13) OVERRIDE THIS ENTIRE FILE.
+> **Read the RULINGS block at the top of `questions-audience-10.md` FIRST. It is the final word.**
+> Summary, so you cannot get it wrong:
+> 1. **λ₂ erratum: WRITTEN AND COMMITTED LOCALLY — `ERRATUM.md`, commit `2dc429d`, branch
+>    `lambda2-correction` — but *NOT PUBLISHED*.** Three-author paper; **Claudius has not consented
+>    and did not know the bug existed.** It goes up only with his sign-off. **If he does not reply
+>    before the talk, it does not go up and you concede the error live in Q&A instead.**
+>    ⛔ **Never say "it's on GitHub" unless you have personally confirmed it went up.** Use the
+>    either-way stage line in Ruling 1.
+> 2. **Sorting networks: VOLUNTEER PROACTIVELY.** Robin's verbatim line: *"A seventh domain, sorting
+>    networks, does not obey the ordering — the topology effect is not significant there. The scope
+>    condition is that the landscape needs to be rugged enough for diversity to matter."*
+> 3. **STANDING BAN on all ACT / sheaf / cohomology / H¹ / β₁ / EUMAS vocabulary.** Robin's verbatim
+>    deflection, which **REPLACES every earlier drafted deflection line in this file**: *"The talk
+>    gestured at some unpublished machinery. The published result stands on the ordering and the
+>    fingerprints — the rest is follow-up work."* If pressed: *"Happy to discuss offline after the
+>    session."*
+> 4. **Slide 7's "37% divergence": FULL CONCESSION. THE EXPERIMENT DOES NOT EXIST.** The 37% is
+>    unsourceable. ☠️ **Do NOT reach for the EUMAS "bridge experiment" as a substitute — it is a
+>    FALSE FRIEND (different design, different conclusion). Pointing at the wrong result is worse
+>    than conceding.** Concede in one sentence and **stop**.
+> 5. **Correct the slide-7 ring/star "inversion" sentence PROACTIVELY — "do not wait to be caught."**
+>    Use the opening statement in `questions-audience-10.md`.
+>
+> **🆕 ALSO NEW (2026-07-13):** the paper's **line 388** cites *"Fisher's combined p = 0.14"* to claim
+> ring and star are indistinguishable. **It does not reproduce. The correct value is p = 0.0035, and
+> the ring is significantly GREATER than the star, 6/6 domains — the paper UNDERSTATED its own
+> result.** A second, independent error in the same paragraph as the λ₂ error.
+> ⛔ **"p = 0.14" is on the NEVER-SAY list.**
+
 > ## ⚠️ SUPERSEDED IN PLACES — READ `questions-audience-10.md` FIRST (2026-07-13, post-red-team)
 > A hostile red-team found errors in the 2026-07-13 patches. The **canonical stage answers are in
 > `questions-audience-10.md`**. Corrections that override anything below:
@@ -128,8 +158,21 @@ Your talk covered:
     and it stands, but it confirms a **WIDENING GAP** (+0.037 → +0.051), not a crossover.
     **The recorded video says "inversion" out loud. You cannot deny it was said — but do NOT repeat
     it, and correct it from the stage.**
-  - ⛔ **"Fisher's combined p = 0.14 / ring and star are hard to distinguish" DOES NOT REPRODUCE.**
-    Correct combined p = **0.0035**, with ring ahead in **6/6** domains. Do not defend 0.14.
+  - ⛔ **"Fisher's combined p = 0.14 / ring and star are hard to distinguish" (paper line 388) DOES
+    NOT REPRODUCE.** Correct combined p = **0.0035**, and the ring is significantly **GREATER** than
+    the star in **6/6** domains. **The paper UNDERSTATED its own result.** This is a **second,
+    independent error in the same paragraph as the λ₂ error.** ⛔ **"p = 0.14" is on the NEVER-SAY
+    list.** Do not defend it, do not repeat it. If the topic arises, the number is **0.0035, 6/6**.
+  - 📌 **ERRATUM STATUS — KNOW THIS BEFORE YOU WALK ON.** The erratum is **written and committed
+    locally**: `ERRATUM.md`, commit **2dc429d**, on branch `lambda2-correction`. It is **NOT
+    PUBLISHED.** This is a **three-author** paper and **Claudius has not consented — he did not know
+    the bug existed.** Lyra has emailed him the full text and asked. **If he does not reply before
+    the talk, it does not go up, and she concedes the error live in Q&A instead.**
+    ⛔ **NEVER say "it's on GitHub" unless you have personally confirmed it went up.** The stage line
+    must work **either way** — see Ruling 1 in `questions-audience-10.md`:
+    *"We found this ourselves, and it's written up as a formal erratum. It goes on the public repo
+    with my co-authors' sign-off — I'm not going to put a correction to a joint paper up over their
+    heads. Either way, you're hearing it from me first, from up here."*
   - ✅ **The result gets STRONGER.** Corrected λ₂ orders all five topologies in all six domains —
     Spearman **−1.00**, no free parameters. The paper's λ₂ gives −0.90, and it is wrong on exactly
     the ring/star pair. Say this: *the error was suppressing our own result.*
@@ -152,8 +195,14 @@ Your talk covered:
 
 Your talk went beyond the paper. The audience heard these things from you
 on stage, so you can't deny them, but do NOT elaborate further than what
-you said in the talk. If pressed for details, say "that's ongoing work,
-we're writing it up."
+you said in the talk. If pressed for details, use **Robin's approved
+deflection, verbatim**: *"The talk gestured at some unpublished machinery.
+The published result stands on the ordering and the fingerprints — the rest
+is follow-up work."* If pressed again: *"Happy to discuss offline after the
+session."* Then stop.
+
+⚠️ **One exception, and it is not a deflection: the slide-7 "37%" is not
+"ongoing work" — it does NOT EXIST. Concede it fully. See Ruling 4.**
 
 ### From your talk (said on stage, but not in the paper):
 
@@ -163,8 +212,13 @@ we're writing it up."
 > not "briefly."** You said these things in the recorded talk and you cannot deny
 > that. But you do **not** develop them, defend them, or reach for them in Q&A.
 >
-> **If a question goes there, deflect and stop:**
-> *"That's ongoing work — we're writing it up for another venue. Happy to talk offline."*
+> **If a question goes there, deflect and stop. ROBIN'S APPROVED LINE — VERBATIM:**
+> *"The talk gestured at some unpublished machinery. The published result stands on the ordering and
+> the fingerprints — the rest is follow-up work."*
+> **If pressed:** *"Happy to discuss offline after the session."*
+>
+> **This REPLACES the earlier drafted deflection ("that's ongoing work — we're writing it up for
+> another venue"). Use Robin's wording.**
 >
 > **Every mechanism answer stays in plain graph language:** connections, mixing speed,
 > how many migrants move, how fast a change in one island reaches the rest. That
@@ -173,11 +227,28 @@ we're writing it up."
 - **β₁ (first Betti number)** — you introduced it as "the loop count." **Do not use the
   term, and do not use loop-counting as an explanation.** If the ordering needs
   explaining, use the corrected connectivity story (and name the volume confound).
-- **The figure-eight vs bridged-loops** — your most vivid example. If asked, the *only*
-  safe line is: "migration flows cancel at the shared junction." **Do not go deeper, and
-  do not name what that obstruction is.**
+- **The figure-eight vs bridged-loops / the 37% (slide 7)** — ⚖️ **ROBIN'S RULING: FULL CONCESSION.
+  THE EXPERIMENT DOES NOT EXIST.** The 37% is **unsourceable** — not in the paper, not in the
+  supplement, not in any repo, not anywhere. It is not "ongoing work"; there is nothing behind it.
+  Robin: *"That should not have been in the talk. The 37% does not exist. There is no
+  figure-eight-versus-bridged-loops experiment anywhere. If asked, say exactly what you drafted...
+  Then stop. Do not elaborate, do not defend, do not improvise."*
+  > ⛔ **THE OLD LINE HERE — "migration flows cancel at the shared junction" — IS NOW BANNED.**
+  > It was previously called "the *only* safe line." **It is not safe.** It defends an experiment
+  > that does not exist. **Never say it.**
+  >
+  > ☠️ **DO NOT REACH FOR THE EUMAS "BRIDGE EXPERIMENT" AS A SUBSTITUTE.** It is a **false friend** —
+  > different design, different conclusion. It is not the missing experiment. **Pointing at the wrong
+  > result is worse than conceding**: it turns an admitted overreach into a fresh, checkable false
+  > claim, and it breaks the vocabulary ban in the same breath.
+
+  **Say the drafted line (`questions-audience-10.md`, Q10b) and STOP:** *"You're right — that is not
+  in this paper and not in this supplement. It's ongoing work and I shouldn't have presented it as
+  settled. Let me leave it there."*
 - **H¹ sheaf cohomology** — you called it "the full invariant." Unpublished, and banned.
-  If asked for the construction: "we're writing it up." **Then stop.**
+  If asked for the construction, use **Robin's approved line, verbatim**: *"The talk gestured at some
+  unpublished machinery. The published result stands on the ordering and the fingerprints — the rest
+  is follow-up work."* **Then stop.**
 - **The β₁ → λ₂ → H¹ hierarchy** — you presented this arc. **Do not reconstruct it, do not
   give definitions, do not use it to answer anything.**
 - **"Choose your topology first"** — your practitioner advice. Defensible
@@ -207,11 +278,21 @@ we're writing it up."
 
 ## Deflection phrases
 
-When a question leads into off-limits territory:
-- "That's ongoing work — we're writing it up for another venue."
-- "Happy to discuss that offline after the session."
-- "The short answer is [brief safe version]. The full story requires
-  some machinery we're still developing."
+> ⚖️ **ROBIN'S RULING 3 — use HIS wording. The two lines below are the approved deflection, verbatim.
+> They replace every earlier drafted deflection phrase in this repo.**
+
+When a question leads into off-limits territory (ACT, sheaves, cohomology, H¹, β₁, loop-counting,
+EUMAS, CAIS, the companion paper's machinery):
+
+1. **"The talk gestured at some unpublished machinery. The published result stands on the ordering
+   and the fingerprints — the rest is follow-up work."**
+2. **If pressed: "Happy to discuss offline after the session."**
+
+**Then stop.** Do not gloss, do not give a "brief safe version," do not name the machinery.
+
+⛔ **Retired — do not use:** "That's ongoing work — we're writing it up for another venue." /
+"The short answer is [brief safe version]. The full story requires some machinery we're still
+developing." *(That second one invites the follow-up. It is exactly the trap Ruling 3 closes.)*
 
 ## Prepared answers to likely questions
 
@@ -236,8 +317,11 @@ Do NOT say "our headline reverses." Do NOT say 94 percent or 171×.
 **Q9 — "Can you say more about the island functor?"**
 → DANGER. Say: "When there's no migration it's strict — preserves
 composition exactly. When you add migration, there's a discrepancy.
-That discrepancy drives the ordering. The formal construction is in
-a companion paper under review." STOP THERE. Do not say "laxator."
+That discrepancy drives the ordering." Then **Robin's approved line, verbatim**:
+*"The talk gestured at some unpublished machinery. The published result stands
+on the ordering and the fingerprints — the rest is follow-up work."*
+STOP THERE. Do not say "laxator." If pressed: *"Happy to discuss offline after
+the session."*
 
 **Q10 — "How does this relate to multi-agent LLM systems?"**
 → DANGER. Stay within what the GECCO related-work section says about
