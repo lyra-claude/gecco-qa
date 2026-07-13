@@ -246,3 +246,86 @@ condition"). That is not enough, and the word **"universal"** (abstract `:103`, 
 - **Stage line:** concede "universal" is an overclaim, say it should read "across six domains,"
   then give the degeneracy numbers. See `questions-audience-10.md` Q10. Anyone who opens the
   supplement finds this in ten minutes — raise it first.
+
+---
+
+# I. THE λ₂ ERROR — found the day before the talk. RAISE IT FIRST.
+
+Full technical erratum: **`lambda2-correction.md`** in this repo. Reproduce it yourself with
+`python3 verify_lambda2.py` — it runs in two seconds off the shipped CSVs.
+
+**What happened, in one line:** the paper's λ₂ for the ring is computed on a two-way cycle, but
+the code's ring only passes migrants one way round. Ring λ₂ is exactly 2× too large at both n=5
+and n=7. Every other topology is unaffected.
+
+**The result gets STRONGER, and one sentence gets RETRACTED.** Both. Say both.
+
+- Corrected: Spearman(diversity, λ₂) = **−1.00 in 6/6 domains** (paper's λ₂ gives −0.90, and it
+  is wrong on exactly the ring/star pair — the one pair the fix touches).
+- **RETRACTED:** the Conclusion's "spectral graph theory predicts the ring/star inversion at n=7,
+  confirmed experimentally" (`:512`). **There is no inversion, and none is predicted.** Ring beats
+  star at both sizes. The n=7 maze experiment is real and stands (p = 2.7e-5) — but it confirms a
+  *widening gap*, not a crossover.
+- **DOES NOT REPRODUCE:** "Fisher's combined p = 0.14 across six domains" (`:388`). Correct value
+  is **p = 0.0035**, ring > star in **6/6** domains. No code computing any Fisher combination
+  exists anywhere in the repos. Do not defend this number. It is gone.
+- **VOLUNTEER THE CONFOUND:** migration volume (0, 5m, 8m, 10m, 20m) is *also* rank-perfect with
+  diversity, ρ = −1.00 in the same 6/6, and it also predicts ring > star at n=7. λ₂ and volume are
+  **not separable in this dataset**. The paper's own volume control (in `random_migrate`) is
+  broken by the same directed/undirected slip. Say this before anyone asks.
+
+---
+
+## THE STAGE ANSWER — λ₂ / the ring/star inversion (~45 seconds, say it out loud)
+
+> "I have to correct the paper, and I'd rather do it from up here than have you find it.
+>
+> We report the connectivity of the ring as if migrants go both ways round the circle. They don't.
+> In our code the ring is a one-way relay — each island passes copies to its neighbour and gets
+> nothing back — while every other topology does a genuine two-way swap. So a ring connection is
+> half as strong as we said. Our ring number is exactly double what it should be.
+>
+> Here is the thing: fixing it makes the result better, not worse. With the correct number, the
+> ordering of the five topologies matches the ordering of the diversity perfectly — a correlation
+> of minus one, in all six domains. With the number as printed, we got minus nought-point-nine, and
+> the one place we got it wrong was precisely the ring-versus-star pair. Our own mistake was hiding
+> our own result.
+>
+> But one sentence in the conclusion has to go. We claim the theory predicts ring and star swap
+> places at seven islands, and that we confirmed it. There is no swap. Ring beats star at five
+> islands and at seven. The seven-island experiment is real, and the gap gets *bigger* — which is
+> what the corrected theory actually predicts, and it gets the size about right. So the prediction
+> stands, but it is a different prediction from the one we wrote down.
+>
+> And I'll hand you the stick to beat me with: the number of individuals each topology moves is
+> *also* perfectly ordered with diversity. I cannot separate the two in this data. The next
+> experiment has to move the same number of migrants through every shape and change only the shape.
+> Until then, this is a very clean correlation with a confound sitting right on top of it."
+
+---
+
+## THE 15-SECOND VERSION (for a hostile one-liner)
+
+> "You're right, and it's worse than you think — our ring number is exactly double what it should
+> be, because our ring only passes migrants one way. Fix it and the correlation goes from minus
+> nought-point-nine to minus one, in all six domains. But the inversion sentence in our conclusion
+> is wrong and I retract it: there is no inversion. Ring beats star at both sizes. And the honest
+> caveat is that migration volume fits the data just as well as connectivity does — we can't tell
+> them apart yet."
+
+---
+
+## If pressed on the Fisher p = 0.14
+
+> "That number doesn't reproduce, and I'm not going to defend it. The correct combined p-value for
+> ring versus star across the six domains is nought-point-nought-nought-three-five, and ring is
+> ahead in all six. We wrote that they were hard to tell apart. They aren't. That claim was an
+> artefact of the same connectivity error — it made ring and star look like neighbours when they
+> aren't."
+
+## If pressed on "so is λ₂ the mechanism?"
+
+> "Honestly? Not established. λ₂ and the sheer number of migrants moved are rank-identical across
+> every topology we ran, so this data cannot tell you which one is doing the work. What I can tell
+> you is that the ordering is real, it's perfect, and it's the same in six very different domains.
+> The mechanism is the next paper, and it needs an experiment we haven't run."
