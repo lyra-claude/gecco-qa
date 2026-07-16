@@ -9,6 +9,57 @@ Lyra — please draft concise answers (2-3 sentences each) that stay
 within the GECCO paper's scope. See do-not-discuss/ for topics that
 belong to the ACT paper and should NOT be raised.
 
+⚠️ READ qa-corrections.md BEFORE THIS FILE. The paper's "23.9×
+topology-over-domain" statistic is KNOWN-WRONG. Do not assert it.
+See also questions-extra.md for ~10 hostile follow-up questions.
+
+⚖️⚖️ ROBIN'S FOUR RULINGS (2026-07-13) OVERRIDE THIS ENTIRE FILE.
+Read the RULINGS block at the top of questions-audience-10.md FIRST.
+  1. λ2 ERRATUM: written and committed LOCALLY (ERRATUM.md, commit
+     2dc429d, branch lambda2-correction) but NOT PUBLISHED. This is a
+     THREE-AUTHOR paper and CLAUDIUS HAS NOT CONSENTED — he did not know
+     the bug existed. It goes up only with his sign-off. IF HE DOES NOT
+     REPLY BEFORE THE TALK, IT DOES NOT GO UP, AND YOU CONCEDE THE ERROR
+     LIVE IN Q&A INSTEAD. NEVER say "it's on GitHub" unless you have
+     personally confirmed it. Use the either-way stage line (Ruling 1).
+  2. SORTING NETWORKS: VOLUNTEER PROACTIVELY. Robin's verbatim line —
+     "A seventh domain, sorting networks, does not obey the ordering —
+     the topology effect is not significant there. The scope condition
+     is that the landscape needs to be rugged enough for diversity to
+     matter." Scope condition, NOT a refutation. Do not wait to be asked.
+  3. STANDING BAN on ALL algebraic-topology / sheaf / cohomology / H1 /
+     beta-1 / EUMAS vocabulary. Robin's approved deflection, VERBATIM —
+     "The talk gestured at some unpublished machinery. The published
+     result stands on the ordering and the fingerprints — the rest is
+     follow-up work." If pressed: "Happy to discuss offline after the
+     session." THIS REPLACES EVERY EARLIER DEFLECTION LINE IN THIS FILE.
+  4. SLIDE 7's "37% divergence": FULL CONCESSION. THE EXPERIMENT DOES
+     NOT EXIST. The 37% is unsourceable. DO NOT reach for the EUMAS
+     "bridge experiment" as a substitute — it is a FALSE FRIEND
+     (different design, different conclusion). Pointing at the wrong
+     result is WORSE than conceding. Concede in one sentence, then STOP.
+  5. Correct the slide-7 ring/star "inversion" sentence PROACTIVELY.
+     "Do not wait to be caught."
+
+⚠️⚠️ ALSO KNOWN-WRONG, found the day before the talk (see
+qa-corrections.md section I, and lambda2-correction.md):
+  - The paper's connectivity number for the RING is exactly 2× too
+    large (1.382 → 0.691 at n=5; 0.753 → 0.377 at n=7). The code's
+    ring is a ONE-WAY relay; every other topology does a two-way swap.
+  - THERE IS NO RING/STAR INVERSION AT n=7, and none is predicted.
+    Ring beats star at BOTH sizes. The conclusion's "inversion"
+    sentence is RETRACTED. The n=7 result is a WIDENING GAP.
+  - "Fisher's combined p = 0.14 / ring and star are hard to
+    distinguish" (paper LINE 388) DOES NOT REPRODUCE. Correct value:
+    p = 0.0035, ring significantly GREATER than star, 6/6 domains.
+    THE PAPER UNDERSTATED ITS OWN RESULT. This is a SECOND, INDEPENDENT
+    error in the SAME PARAGRAPH as the lambda-2 error.
+    "p = 0.14" IS ON THE NEVER-SAY LIST.
+  - What gets STRONGER: corrected, the rule orders all five
+    topologies in all six domains, Spearman −1.00, nothing fitted.
+  - MUST VOLUNTEER: migrant volume is ALSO rank-perfect with
+    diversity. Connectivity and volume are not separable here.
+
 ---
 
 1. "Your topology ordering is none > ring > star > random > FC — but
@@ -19,13 +70,25 @@ belong to the ACT paper and should NOT be raised.
    convergence is known, yes — Whitley and Skolicki showed this for
    individual domains. What's new is three things: (a) the ordering
    is *identical* across six unrelated domains with perfect rank
-   concordance W=1.0, which has never been demonstrated; (b) the
-   spectral theory predicts the ring/star inversion at n=7 islands,
-   which we confirm with p=6.6×10⁻⁵ — that's a falsifiable
-   quantitative prediction, not just "more connectivity = less
-   diversity"; and (c) framing topology as a compositional property
-   rather than a tuning parameter is what lets us ask *why* the
-   ordering is domain-independent, not just observe that it is.
+   concordance W=1.0, which has never been demonstrated; (b) we have
+   a rule that computes mixing speed from the wiring alone, and —
+   once you fix an error in our own ring number — it orders all five
+   topologies correctly in all six domains, a correlation of minus
+   one with nothing fitted. "More connectivity = less diversity"
+   doesn't tell you a ring beats a star. Our rule does, and it's
+   right every time. It also predicts, out of sample, that the
+   ring/star gap WIDENS when you go to seven islands — and it does,
+   at about three in a hundred thousand; and (c) framing topology as
+   a compositional property rather than a tuning parameter is what
+   lets us ask *why* the ordering is domain-independent, not just
+   observe that it is.
+
+   ⚠️ DO NOT SAY "the theory predicts the ring/star INVERSION at
+   n=7." There is NO inversion — ring beats star at n=5 AND n=7.
+   That sentence is in the paper's conclusion and it is RETRACTED.
+   The n=7 prediction is a WIDENING GAP, not a crossover.
+   Honest caveat to volunteer: migrant volume is also rank-perfect
+   with diversity, so this data can't separate wiring from volume.
 
 2. "You use 10 seeds for fingerprints and only 3 domains. How do you
    know the fingerprint shapes aren't artifacts of your specific
@@ -114,16 +177,35 @@ belong to the ACT paper and should NOT be raised.
    non-standard topologies — small-world, scale-free — to see if λ₂
    fully predicts the diversity ordering?"
 
-   ANSWER: Not yet — we tested ring, star, random Erdős-Rényi, and
-   fully connected. Small-world and scale-free topologies are
-   natural next steps. The random topology result is actually
-   interesting here: its snapshot λ₂ is low but its effective
-   diversity erosion is high, which suggests that for time-varying
-   topologies, the instantaneous λ₂ isn't the whole story — you
-   need the time-averaged spectral properties. For fixed topologies,
-   λ₂ predicts the ordering perfectly across our test set, but we
-   haven't tested enough topologies to rule out confounds with
-   other graph properties like diameter or expansion.
+   ANSWER: Not yet — we tested none, ring, star, random Erdős-Rényi,
+   and fully connected. Small-world and scale-free are the natural
+   next steps and we haven't run them.
+
+   On our five: once we correct the ring number (see the header —
+   our ring is a one-way relay, so its printed connectivity is
+   exactly double what it should be), λ₂ orders all five topologies
+   correctly in all six domains — Spearman minus one, nothing
+   fitted. As printed we got minus nought-point-nine, and the one
+   pair it got wrong was ring versus star. So the rule does better
+   than the paper claims, not worse.
+
+   But I want to be straight about what that does and doesn't buy.
+   Five graphs is five points. The one confound I can't dismiss is
+   migration VOLUME: the number of individuals each topology moves
+   per event — zero, five, eight, ten, twenty — is ALSO perfectly
+   ordered with diversity, in the same six domains. λ₂ and volume
+   are rank-identical across every topology we ran, so this dataset
+   cannot tell you which one is doing the work. Diameter and
+   expansion move together with them too. The experiment that
+   separates them is to push the SAME number of migrants through
+   every shape and vary only the shape — and that's exactly what
+   small-world and scale-free should be run with.
+
+   ⚠️ The old answer here claimed "random's snapshot λ₂ is low but
+   its diversity erosion is high." That is FALSE — random's λ₂ is
+   2.5 at n=5, the second-HIGHEST of the five, and its erosion is
+   correspondingly high. There is no anomaly there. Do not invent a
+   tension that doesn't exist.
 
 8. "Your adaptive strategy collapses to 0.02 diversity. Is that a
    bug or a feature? In practice, adaptive GAs balance exploration
@@ -173,8 +255,9 @@ belong to the ACT paper and should NOT be raised.
     systems — Yang et al. found up to 10% performance variation
     across fixed topologies, and Kim et al. found 17.2× error
     amplification for independent vs 4.4× for centralized
-    compositions. Our results strengthen this by showing topology
-    explains 23.9× more variance than domain in the GA setting.
+    compositions. Our results strengthen this by showing that in the
+    GA setting the topology ordering is identical across six unrelated
+    domains — the composition, not the task, is what fixes it.
     Whether the same universal ordering holds for LLM agent
     topologies is an interesting open question — we'd expect the
     compositional structure to transfer, but we haven't tested it.
@@ -207,17 +290,30 @@ belong to the ACT paper and should NOT be raised.
     surely population size, mutation rate, and selection pressure
     also matter enormously. Aren't you overstating the claim?"
 
-    ANSWER: We held those parameters constant across all experiments
-    — same population size, same mutation rate, same tournament size.
-    The claim is that *given the same operators and parameters*,
-    the way you compose them determines the diversity trajectory.
-    We're not claiming parameters don't matter — of course they do.
-    But the ANOVA result is striking: topology explains 23.9× more
-    variance than which domain you're in. That means switching from
-    ring to fully-connected migration (a compositional change)
-    affects diversity more than switching from OneMax to checkers
-    (a complete change of genome, fitness function, and landscape
-    structure). Whether the ordering is robust to parameter variation
-    is a good question we haven't tested — but the 23.9× ratio
-    suggests compositional structure is the dominant factor, not a
-    minor one.
+    ANSWER: You're right that they matter, and I want to be precise
+    about what we did and didn't hold fixed. In the *fingerprint*
+    experiments the operators are the same functions — same tournament
+    selection, same one-point crossover, same bit-flip mutation — but
+    the composition specifies the *schedule*: which parameterisation
+    of each operator runs in which phase. Hourglass really does raise
+    mutation in its explore and diversify phases, and its tournament
+    size moves between 2 and 5. That is what an "explore phase" means.
+    So the claim isn't that parameters don't matter — and I'll go
+    further. That experiment cannot separate the arrangement from the
+    mutation rate. The terminal mutation rate alone accounts for almost
+    all of the spread. So we are retiring the variance number we had
+    from it. What survives is the *shapes* — spike, crash, rebound —
+    across three genome lengths and three landscapes, with an
+    eighteen-fold spread in final diversity. For the composition claim
+    itself, look at the topology experiment instead: there every
+    operator and every parameter is held identical, and the only thing
+    that changes is the migration graph — and the ordering is still
+    identical across six domains, with topology explaining sixty-eight
+    percent of the within-domain variance in final diversity.
+
+    NOTE FOR LYRA: the old answer to this question claimed "same
+    mutation rate, same tournament size." That was FALSE (see
+    qa-corrections.md, section D) and it contradicted Q8 above. Do not
+    assert that parameters were held constant in the fingerprint
+    experiments. Only the crossover rate (0.8) is genuinely constant
+    across strategies.

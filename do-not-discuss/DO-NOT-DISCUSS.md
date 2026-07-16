@@ -77,17 +77,35 @@ it — but don't elaborate further than what the talk said.
     invariant ("the loop count already predicts the diversity ordering").
     Not mentioned anywhere in the GECCO paper.
 
-19. **The figure-eight vs bridged-loops example** — the talk's most vivid
-    moment. Two topologies with identical β₁ that differ 37% in diversity.
-    Not in any paper. Someone WILL ask about this. Keep the answer to what
-    the talk said: "migration flows cancel at the shared junction."
+19. **The figure-eight vs bridged-loops example (the 37%)** — ⚖️ **ROBIN'S
+    RULING, 2026-07-13: FULL CONCESSION. THE EXPERIMENT DOES NOT EXIST.**
+    Robin: *"That should not have been in the talk. The 37% does not exist.
+    There is no figure-eight-versus-bridged-loops experiment anywhere."*
+    The 37% is **unsourceable** — not in the paper, not in the supplement,
+    not in any repo. It is **not a result**, and it is not "ongoing work."
+
+    ⛔ **THE OLD INSTRUCTION HERE — keep the answer to "migration flows
+    cancel at the shared junction" — IS REVOKED AND NOW BANNED.** That line
+    defends an experiment that does not exist. **Never say it.**
+
+    ☠️ **DO NOT REACH FOR THE EUMAS "BRIDGE EXPERIMENT" AS A SUBSTITUTE.**
+    It is a **false friend** — different design, different conclusion.
+    **Pointing at the wrong result is worse than conceding.**
+
+    Someone WILL ask. **Concede in one sentence and STOP** — the drafted,
+    approved answer is `questions-audience-10.md`, **Q10b**. Do not
+    elaborate, do not defend, do not improvise.
 
 20. **H¹ sheaf cohomology** — the talk's intellectual climax claims the
     "full invariant" is H¹ of the graph with coefficients in a
     population-dynamics sheaf. Not in the GECCO paper, not in the ACT
     paper, not published anywhere. This is the most dangerous topic — if
-    someone asks for details, say "that's ongoing work, we're writing it
-    up" and stop.
+    someone asks for details, use **Robin's approved deflection, verbatim**:
+    *"The talk gestured at some unpublished machinery. The published result
+    stands on the ordering and the fingerprints — the rest is follow-up
+    work."* If pressed: *"Happy to discuss offline after the session."*
+    Then stop. **(This replaces the older "that's ongoing work, we're
+    writing it up" wording.)**
 
 21. **The β₁ → λ₂ → H¹ arc** — the talk presents this as a three-level
     hierarchy of invariants. The GECCO paper only has λ₂. The ACT paper
